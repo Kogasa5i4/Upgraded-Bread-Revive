@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "kogasas_thinking:netherite_shard"
+    },
+    {
+      "item": "kogasas_thinking:netherite_shard"
+    },
+    {
+      "item": "kogasas_thinking:netherite_shard"
+    },
+    {
+      "item": "kogasas_thinking:netherite_shard"
+    },
+    {
+      "item": "kogasas_thinking:netherite_shard"
+    },
+    {
+      "item": "kogasas_thinking:netherite_shard"
+    },
+    {
+      "item": "kogasas_thinking:netherite_shard"
+    },
+    {
+      "item": "kogasas_thinking:netherite_shard"
+    },
+    {
+      "item": "kogasas_thinking:netherite_shard"
+    }
+  ],
+  "result": {
+    "item": "minecraft:netherite_scrap",
+    "count": 1
+  }
+}

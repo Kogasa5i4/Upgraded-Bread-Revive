@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "kogasas_thinking:emerald_shard"
+    },
+    {
+      "item": "kogasas_thinking:emerald_shard"
+    },
+    {
+      "item": "kogasas_thinking:emerald_shard"
+    },
+    {
+      "item": "kogasas_thinking:emerald_shard"
+    },
+    {
+      "item": "kogasas_thinking:emerald_shard"
+    },
+    {
+      "item": "kogasas_thinking:emerald_shard"
+    },
+    {
+      "item": "kogasas_thinking:emerald_shard"
+    },
+    {
+      "item": "kogasas_thinking:emerald_shard"
+    },
+    {
+      "item": "kogasas_thinking:emerald_shard"
+    }
+  ],
+  "result": {
+    "item": "minecraft:emerald",
+    "count": 1
+  }
+}

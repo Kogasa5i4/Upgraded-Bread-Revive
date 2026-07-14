@@ -1,0 +1,44 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "irons_spellbooks"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "create"
+        }
+      ],
+      "recipe": {
+        "type": "create:crushing",
+        "ingredients": [
+          {
+            "tag": "forge:ores/mithril"
+          }
+        ],
+        "results": [
+          {
+            "item": "kogasas_thinking:crushed_mithril",
+            "count": 1
+          },
+          {
+            "item": "kogasas_thinking:crushed_mithril",
+            "chance": 0.75
+          },
+          {
+            "item": "create:experience_nugget",
+            "count": 2,
+            "chance": 0.75
+          },
+          {
+            "item": "minecraft:cobblestone",
+            "chance": 0.125
+          }
+        ]
+      }
+    }
+  ]
+}

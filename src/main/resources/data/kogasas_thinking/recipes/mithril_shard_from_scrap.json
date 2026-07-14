@@ -1,0 +1,25 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "irons_spellbooks"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "irons_spellbooks:mithril_scrap"
+          }
+        ],
+        "result": {
+          "item": "kogasas_thinking:mithril_shard",
+          "count": 9
+        }
+      }
+    }
+  ]
+}

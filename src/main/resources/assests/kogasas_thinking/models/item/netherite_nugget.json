@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "kogasas_thinking:item/netherite_nugget"
+  }
+}

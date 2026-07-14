@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "create"
+        }
+      ],
+      "recipe": {
+        "type": "create:crushing",
+        "ingredients": [
+          {
+            "item": "kogasas_thinking:raw_debris"
+          }
+        ],
+        "results": [
+          {
+            "item": "kogasas_thinking:crushed_debris",
+            "count": 1
+          },
+          {
+            "item": "create:experience_nugget",
+            "count": 2,
+            "chance": 0.75
+          }
+        ]
+      }
+    }
+  ]
+}

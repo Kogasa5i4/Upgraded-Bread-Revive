@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "kogasas_thinking:diamond_shard"
+    },
+    {
+      "item": "kogasas_thinking:diamond_shard"
+    },
+    {
+      "item": "kogasas_thinking:diamond_shard"
+    },
+    {
+      "item": "kogasas_thinking:diamond_shard"
+    },
+    {
+      "item": "kogasas_thinking:diamond_shard"
+    },
+    {
+      "item": "kogasas_thinking:diamond_shard"
+    },
+    {
+      "item": "kogasas_thinking:diamond_shard"
+    },
+    {
+      "item": "kogasas_thinking:diamond_shard"
+    },
+    {
+      "item": "kogasas_thinking:diamond_shard"
+    }
+  ],
+  "result": {
+    "item": "minecraft:diamond",
+    "count": 1
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "kogasas_thinking:copper_nugget"
+    },
+    {
+      "item": "kogasas_thinking:copper_nugget"
+    },
+    {
+      "item": "kogasas_thinking:copper_nugget"
+    },
+    {
+      "item": "kogasas_thinking:copper_nugget"
+    },
+    {
+      "item": "kogasas_thinking:copper_nugget"
+    },
+    {
+      "item": "kogasas_thinking:copper_nugget"
+    },
+    {
+      "item": "kogasas_thinking:copper_nugget"
+    },
+    {
+      "item": "kogasas_thinking:copper_nugget"
+    },
+    {
+      "item": "kogasas_thinking:copper_nugget"
+    }
+  ],
+  "result": {
+    "item": "minecraft:copper_ingot",
+    "count": 1
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "irons_spellbooks"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "kogasas_thinking:mithril_nugget"
+          },
+          {
+            "item": "kogasas_thinking:mithril_nugget"
+          },
+          {
+            "item": "kogasas_thinking:mithril_nugget"
+          },
+          {
+            "item": "kogasas_thinking:mithril_nugget"
+          },
+          {
+            "item": "kogasas_thinking:mithril_nugget"
+          },
+          {
+            "item": "kogasas_thinking:mithril_nugget"
+          },
+          {
+            "item": "kogasas_thinking:mithril_nugget"
+          },
+          {
+            "item": "kogasas_thinking:mithril_nugget"
+          },
+          {
+            "item": "kogasas_thinking:mithril_nugget"
+          }
+        ],
+        "result": {
+          "item": "irons_spellbooks:mithril_ingot",
+          "count": 1
+        }
+      }
+    }
+  ]
+}

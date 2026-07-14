@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "kogasas_thinking:lapis_shard"
+    },
+    {
+      "item": "kogasas_thinking:lapis_shard"
+    },
+    {
+      "item": "kogasas_thinking:lapis_shard"
+    },
+    {
+      "item": "kogasas_thinking:lapis_shard"
+    },
+    {
+      "item": "kogasas_thinking:lapis_shard"
+    },
+    {
+      "item": "kogasas_thinking:lapis_shard"
+    },
+    {
+      "item": "kogasas_thinking:lapis_shard"
+    },
+    {
+      "item": "kogasas_thinking:lapis_shard"
+    },
+    {
+      "item": "kogasas_thinking:lapis_shard"
+    }
+  ],
+  "result": {
+    "item": "minecraft:lapis_lazuli",
+    "count": 1
+  }
+}

@@ -12,7 +12,7 @@
         "type": "create:crushing",
         "ingredients": [
           {
-            "item": "kogasas_thinking:raw_debris"
+            "tag": "forge:raw_materials/netherite"
           }
         ],
         "results": [

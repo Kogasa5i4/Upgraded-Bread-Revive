@@ -12,31 +12,31 @@
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "item": "kogasas_thinking:mithril_nugget"
+            "tag": "forge:nuggets/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_nugget"
+            "tag": "forge:nuggets/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_nugget"
+            "tag": "forge:nuggets/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_nugget"
+            "tag": "forge:nuggets/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_nugget"
+            "tag": "forge:nuggets/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_nugget"
+            "tag": "forge:nuggets/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_nugget"
+            "tag": "forge:nuggets/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_nugget"
+            "tag": "forge:nuggets/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_nugget"
+            "tag": "forge:nuggets/mithril"
           }
         ],
         "result": {

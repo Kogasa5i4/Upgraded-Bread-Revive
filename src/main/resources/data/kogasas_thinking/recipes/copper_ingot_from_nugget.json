@@ -2,31 +2,31 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "kogasas_thinking:copper_nugget"
+      "tag": "forge:nuggets/copper"
     },
     {
-      "item": "kogasas_thinking:copper_nugget"
+      "tag": "forge:nuggets/copper"
     },
     {
-      "item": "kogasas_thinking:copper_nugget"
+      "tag": "forge:nuggets/copper"
     },
     {
-      "item": "kogasas_thinking:copper_nugget"
+      "tag": "forge:nuggets/copper"
     },
     {
-      "item": "kogasas_thinking:copper_nugget"
+      "tag": "forge:nuggets/copper"
     },
     {
-      "item": "kogasas_thinking:copper_nugget"
+      "tag": "forge:nuggets/copper"
     },
     {
-      "item": "kogasas_thinking:copper_nugget"
+      "tag": "forge:nuggets/copper"
     },
     {
-      "item": "kogasas_thinking:copper_nugget"
+      "tag": "forge:nuggets/copper"
     },
     {
-      "item": "kogasas_thinking:copper_nugget"
+      "tag": "forge:nuggets/copper"
     }
   ],
   "result": {

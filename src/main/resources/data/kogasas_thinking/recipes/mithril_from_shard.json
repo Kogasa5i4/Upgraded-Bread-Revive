@@ -12,31 +12,31 @@
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "item": "kogasas_thinking:mithril_shard"
+            "tag": "forge:shards/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_shard"
+            "tag": "forge:shards/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_shard"
+            "tag": "forge:shards/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_shard"
+            "tag": "forge:shards/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_shard"
+            "tag": "forge:shards/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_shard"
+            "tag": "forge:shards/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_shard"
+            "tag": "forge:shards/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_shard"
+            "tag": "forge:shards/mithril"
           },
           {
-            "item": "kogasas_thinking:mithril_shard"
+            "tag": "forge:shards/mithril"
           }
         ],
         "result": {

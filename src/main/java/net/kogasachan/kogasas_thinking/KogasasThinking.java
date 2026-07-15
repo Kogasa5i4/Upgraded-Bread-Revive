@@ -10,7 +10,6 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -56,7 +55,7 @@ public class KogasasThinking
             event.accept(ModItems.MITHRIL_SHARD);
             event.accept(ModItems.DIAMOND_SHARD);
             event.accept(ModItems.EMERALD_SHARD);
-            event.accept(ModItems.REDSTONE_SHARD);
+            event.accept(ModItems.REDSTONE_POWDER);
             event.accept(ModItems.LAPIS_SHARD);
             event.accept(ModItems.NETHERITE_NUGGET);
             event.accept(ModItems.MITHRIL_NUGGET);

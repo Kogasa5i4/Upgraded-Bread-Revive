@@ -12,7 +12,7 @@
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "item": "irons_spellbooks:mithril_ingot"
+            "tag": "forge:ingots/mithril"
           }
         ],
         "result": {

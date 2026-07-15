@@ -16,7 +16,7 @@
         "type": "create:crushing",
         "ingredients": [
           {
-            "item": "irons_spellbooks:raw_mithril"
+            "tag": "forge:raw_materials/mithril"
           }
         ],
         "results": [

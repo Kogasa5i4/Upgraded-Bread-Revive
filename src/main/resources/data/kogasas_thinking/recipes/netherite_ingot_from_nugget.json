@@ -2,31 +2,31 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "kogasas_thinking:netherite_nugget"
+      "tag": "forge:nuggets/netherite"
     },
     {
-      "item": "kogasas_thinking:netherite_nugget"
+      "tag": "forge:nuggets/netherite"
     },
     {
-      "item": "kogasas_thinking:netherite_nugget"
+      "tag": "forge:nuggets/netherite"
     },
     {
-      "item": "kogasas_thinking:netherite_nugget"
+      "tag": "forge:nuggets/netherite"
     },
     {
-      "item": "kogasas_thinking:netherite_nugget"
+      "tag": "forge:nuggets/netherite"
     },
     {
-      "item": "kogasas_thinking:netherite_nugget"
+      "tag": "forge:nuggets/netherite"
     },
     {
-      "item": "kogasas_thinking:netherite_nugget"
+      "tag": "forge:nuggets/netherite"
     },
     {
-      "item": "kogasas_thinking:netherite_nugget"
+      "tag": "forge:nuggets/netherite"
     },
     {
-      "item": "kogasas_thinking:netherite_nugget"
+      "tag": "forge:nuggets/netherite"
     }
   ],
   "result": {

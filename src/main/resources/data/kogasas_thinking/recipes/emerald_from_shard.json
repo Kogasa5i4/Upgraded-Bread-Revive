@@ -2,31 +2,31 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "kogasas_thinking:emerald_shard"
+      "tag": "forge:shards/emerald"
     },
     {
-      "item": "kogasas_thinking:emerald_shard"
+      "tag": "forge:shards/emerald"
     },
     {
-      "item": "kogasas_thinking:emerald_shard"
+      "tag": "forge:shards/emerald"
     },
     {
-      "item": "kogasas_thinking:emerald_shard"
+      "tag": "forge:shards/emerald"
     },
     {
-      "item": "kogasas_thinking:emerald_shard"
+      "tag": "forge:shards/emerald"
     },
     {
-      "item": "kogasas_thinking:emerald_shard"
+      "tag": "forge:shards/emerald"
     },
     {
-      "item": "kogasas_thinking:emerald_shard"
+      "tag": "forge:shards/emerald"
     },
     {
-      "item": "kogasas_thinking:emerald_shard"
+      "tag": "forge:shards/emerald"
     },
     {
-      "item": "kogasas_thinking:emerald_shard"
+      "tag": "forge:shards/emerald"
     }
   ],
   "result": {

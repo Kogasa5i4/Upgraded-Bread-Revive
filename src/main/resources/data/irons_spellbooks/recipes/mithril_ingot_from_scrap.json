@@ -11,14 +11,30 @@
       "recipe": {
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
-          { "item": "irons_spellbooks:mithril_scrap" },
-          { "item": "irons_spellbooks:mithril_scrap" },
-          { "item": "irons_spellbooks:mithril_scrap" },
-          { "item": "irons_spellbooks:mithril_scrap" },
-          { "tag": "forge:ingots/gold" },
-          { "tag": "forge:ingots/gold" },
-          { "tag": "forge:ingots/gold" },
-          { "tag": "forge:ingots/gold" }
+          {
+            "tag": "forge:scraps/mithril"
+          },
+          {
+            "tag": "forge:scraps/mithril"
+          },
+          {
+            "tag": "forge:scraps/mithril"
+          },
+          {
+            "tag": "forge:scraps/mithril"
+          },
+          {
+            "tag": "forge:ingots/gold"
+          },
+          {
+            "tag": "forge:ingots/gold"
+          },
+          {
+            "tag": "forge:ingots/gold"
+          },
+          {
+            "tag": "forge:ingots/gold"
+          }
         ],
         "result": {
           "item": "irons_spellbooks:mithril_ingot",

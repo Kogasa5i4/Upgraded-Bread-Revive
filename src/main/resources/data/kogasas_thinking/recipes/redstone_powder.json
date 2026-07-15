@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:redstone"
+      "tag": "forge:dusts/redstone"
     }
   ],
   "result": {
-    "item": "kogasas_thinking:redstone_shard",
+    "item": "kogasas_thinking:redstone_powder",
     "count": 9
   }
 }

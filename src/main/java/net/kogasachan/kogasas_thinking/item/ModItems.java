@@ -28,8 +28,8 @@ public class ModItems {
     public static final RegistryObject<Item> EMERALD_SHARD =
             ITEMS.register("emerald_shard", () -> (new Item(new Item.Properties())));
 
-    public static final RegistryObject<Item> REDSTONE_SHARD =
-            ITEMS.register("redstone_shard", () -> (new Item(new Item.Properties())));
+    public static final RegistryObject<Item> REDSTONE_POWDER =
+            ITEMS.register("redstone_powder", () -> (new Item(new Item.Properties())));
 
     public static final RegistryObject<Item> LAPIS_SHARD =
             ITEMS.register("lapis_shard", () -> (new Item(new Item.Properties())));

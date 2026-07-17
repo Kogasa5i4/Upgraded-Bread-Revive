@@ -1,0 +1,27 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "create"
+        }
+      ],
+      "recipe": {
+        "type": "create:splashing",
+        "ingredients": [
+          {
+            "item": "kogasas_thinking:dry_long_bread"
+          }
+        ],
+        "results": [
+          {
+            "item": "kogasas_thinking:fresh_long_bread",
+            "count": 1
+          }
+        ]
+      }
+    }
+  ]
+}

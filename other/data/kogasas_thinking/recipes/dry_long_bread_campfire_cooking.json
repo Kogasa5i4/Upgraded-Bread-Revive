@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "item": "kogasas_thinking:fresh_long_bread"
+  },
+  "result": "kogasas_thinking:dry_long_bread",
+  "cookingtime": 600
+}

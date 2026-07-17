@@ -10,7 +10,7 @@ import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.kogasachan.upgradedbread.UpgradedBread;
-import net.kogasachan.upgradedbread.item.ModItems;
+import net.kogasachan.upgradedbread.item.BreadItems;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -28,11 +28,11 @@ public class BreadRefreshCategory implements IRecipeCategory<BreadRefreshRecipe>
 
     public BreadRefreshCategory(IGuiHelper guiHelper) {
         this.background = guiHelper.createBlankDrawable(126, 70);
-        this.icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModItems.FRESH_LONG_BREAD.get()));
+        this.icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(BreadItems.FRESH_LONG_BREAD.get()));
     }
 
     @Override
-    public void draw(BreadRefreshRecipe recipe, IRecipeSlotsView recipeSlotsView,
+    public void draw(@NotNull BreadRefreshRecipe recipe, @NotNull IRecipeSlotsView recipeSlotsView,
                      GuiGraphics guiGraphics, double mouseX, double mouseY) {
         ItemStack waterBucket = new ItemStack(Items.WATER_BUCKET);
         guiGraphics.renderItem(waterBucket, 60, 15);

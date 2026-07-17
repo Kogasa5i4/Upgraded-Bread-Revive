@@ -1,7 +1,7 @@
 package net.kogasachan.upgradedbread.datagen;
 
 import net.kogasachan.upgradedbread.UpgradedBread;
-import net.kogasachan.upgradedbread.block.ModBlocks;
+import net.kogasachan.upgradedbread.block.BreadBlocks;
 import net.kogasachan.upgradedbread.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -21,8 +21,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NotNull Provider pProvider) {
         this.tag(ModTags.Blocks.DROP_LOST_ENERGY_CORE)
-                .add(ModBlocks.CARBOHYDRATE_BLOCK.get());
+                .add(BreadBlocks.CARBOHYDRATE_BLOCK.get());
         this.tag(BlockTags.MINEABLE_WITH_HOE)
-                .add(ModBlocks.CARBOHYDRATE_BLOCK.get());
+                .add(BreadBlocks.CARBOHYDRATE_BLOCK.get());
     }
 }

@@ -1,7 +1,7 @@
 package net.kogasachan.upgradedbread.item;
 
 import net.kogasachan.upgradedbread.UpgradedBread;
-import net.kogasachan.upgradedbread.effect.ModEffects;
+import net.kogasachan.upgradedbread.effect.BreadEffects;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ModItems {
+public class BreadItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, UpgradedBread.MODID);
 
     //essence----------------------------------------------------------------------------------------------->
@@ -314,7 +314,7 @@ public class ModItems {
             });
     public static final RegistryObject<Item> FREEZING_LONG_BREAD = ITEMS.register("freezing_long_bread",
             () -> new SimpleFoiledItem(new Item.Properties().stacksTo(16).rarity(Rarity.RARE).food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).
-                    effect(()-> new MobEffectInstance(ModEffects.FREEZING_BODY.get(),1800,0),1.0F).build())){
+                    effect(()-> new MobEffectInstance(BreadEffects.FREEZING_BODY.get(),1800,0),1.0F).build())){
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
                     super.appendHoverText(itemStack, level, tooltip, flag);
@@ -384,7 +384,7 @@ public class ModItems {
                 }
             });
     public static final RegistryObject<Item> HIGH_ENERGY_CORE = ITEMS.register("high_energy_core",
-            () -> new SimpleFoiledItem(new Item.Properties().craftRemainder(ModItems.LOST_ENERGY_CORE.get()).rarity(Rarity.UNCOMMON)) {
+            () -> new SimpleFoiledItem(new Item.Properties().craftRemainder(BreadItems.LOST_ENERGY_CORE.get()).rarity(Rarity.UNCOMMON)) {
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
                     super.appendHoverText(itemStack, level, tooltip, flag);

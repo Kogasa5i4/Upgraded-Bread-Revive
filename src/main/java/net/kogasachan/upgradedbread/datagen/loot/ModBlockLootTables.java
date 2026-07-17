@@ -1,6 +1,6 @@
 package net.kogasachan.upgradedbread.datagen.loot;
 
-import net.kogasachan.upgradedbread.block.ModBlocks;
+import net.kogasachan.upgradedbread.block.BreadBlocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
@@ -16,11 +16,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        this.dropSelf(ModBlocks.CARBOHYDRATE_BLOCK.get());
+        this.dropSelf(BreadBlocks.CARBOHYDRATE_BLOCK.get());
     }
 
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks() {
-        return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+        return BreadBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
     }
 }

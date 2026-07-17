@@ -1,7 +1,7 @@
 package net.kogasachan.upgradedbread.event;
 
 import net.kogasachan.upgradedbread.UpgradedBread;
-import net.kogasachan.upgradedbread.effect.ModEffects;
+import net.kogasachan.upgradedbread.effect.BreadEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,10 +18,10 @@ public class FreezingAttackEvent {
     @SubscribeEvent
     public static void FreezeAttack(AttackEntityEvent event){
         Player player = event.getEntity();
-        if(player.hasEffect(ModEffects.FREEZING_BODY.get())){
+        if(player.hasEffect(BreadEffects.FREEZING_BODY.get())){
             if(event.getTarget() instanceof LivingEntity target) {
                 Random r = new Random();
-                target.addEffect(new MobEffectInstance(ModEffects.PERFECT_FREEZE.get(),80));
+                target.addEffect(new MobEffectInstance(BreadEffects.PERFECT_FREEZE.get(),80));
                 if(r.nextInt(98)<33){
                     player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,60,2));
                 }

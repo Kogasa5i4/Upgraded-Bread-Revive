@@ -1,7 +1,7 @@
 package net.kogasachan.upgradedbread.datagen;
 
 import net.kogasachan.upgradedbread.UpgradedBread;
-import net.kogasachan.upgradedbread.block.ModBlocks;
+import net.kogasachan.upgradedbread.block.BreadBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -15,7 +15,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        blockWithItem(ModBlocks.CARBOHYDRATE_BLOCK);
+        blockWithItem(BreadBlocks.CARBOHYDRATE_BLOCK);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

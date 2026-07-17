@@ -1,6 +1,6 @@
 package net.kogasachan.upgradedbread.compat.jei;
 
-import net.kogasachan.upgradedbread.item.ModItems;
+import net.kogasachan.upgradedbread.item.BreadItems;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
@@ -16,8 +16,8 @@ public class BreadRefreshRecipe implements Recipe<Container> {
     public static final ResourceLocation TYPE_ID = ResourceLocation.fromNamespaceAndPath("upgradedbread", "bread_refresh");
     public static final RecipeType<BreadRefreshRecipe> TYPE = new RecipeType<>() {};
 
-    private final Ingredient input = Ingredient.of(ModItems.DRY_LONG_BREAD.get());
-    private final ItemStack output = new ItemStack(ModItems.FRESH_LONG_BREAD.get());
+    private final Ingredient input = Ingredient.of(BreadItems.DRY_LONG_BREAD.get());
+    private final ItemStack output = new ItemStack(BreadItems.FRESH_LONG_BREAD.get());
 
     @Override
     public boolean matches(@NotNull Container pContainer, @NotNull Level pLevel) {

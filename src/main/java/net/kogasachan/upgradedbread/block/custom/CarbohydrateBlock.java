@@ -1,6 +1,6 @@
 package net.kogasachan.upgradedbread.block.custom;
 
-import net.kogasachan.upgradedbread.item.ModItems;
+import net.kogasachan.upgradedbread.item.BreadItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -30,11 +30,11 @@ public class CarbohydrateBlock extends Block {
     }
 
     @Override
-    public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
+    public void stepOn(Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull Entity entity) {
         if (!level.isClientSide && entity instanceof Player player) {
             if (ThreadLocalRandom.current().nextInt(99) == 0) {
                 player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 1, 0));
-                ItemStack result = new ItemStack(ModItems.LOST_ENERGY_CORE.get());
+                ItemStack result = new ItemStack(BreadItems.LOST_ENERGY_CORE.get());
                 if (!player.getInventory().add(result)) {
                     player.drop(result, false);
                 }

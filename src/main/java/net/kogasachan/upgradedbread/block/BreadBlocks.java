@@ -2,7 +2,7 @@ package net.kogasachan.upgradedbread.block;
 
 import net.kogasachan.upgradedbread.UpgradedBread;
 import net.kogasachan.upgradedbread.block.custom.CarbohydrateBlockItem;
-import net.kogasachan.upgradedbread.item.ModItems;
+import net.kogasachan.upgradedbread.item.BreadItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Supplier;
 
-public class ModBlocks {
+public class BreadBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, UpgradedBread.MODID);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
@@ -41,7 +41,7 @@ public class ModBlocks {
     }
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return ModItems.ITEMS.register(name, () -> new CarbohydrateBlockItem(block.get(), new Item.Properties()));
+        return BreadItems.ITEMS.register(name, () -> new CarbohydrateBlockItem(block.get(), new Item.Properties()));
     }
 
     public static final RegistryObject<Block> CARBOHYDRATE_BLOCK = registerBlock("carbohydrate_block",
@@ -57,11 +57,11 @@ public class ModBlocks {
                 }
 
                 @Override
-                public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
+                public void stepOn(Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull Entity entity) {
                     if (!level.isClientSide && entity instanceof Player player) {
                         if (ThreadLocalRandom.current().nextInt(99) == 0) {
                             player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 1, 0));
-                            ItemStack result = new ItemStack(ModItems.LOST_ENERGY_CORE.get());
+                            ItemStack result = new ItemStack(BreadItems.LOST_ENERGY_CORE.get());
                             if (!player.getInventory().add(result)) {
                                 player.drop(result, false);
                             }

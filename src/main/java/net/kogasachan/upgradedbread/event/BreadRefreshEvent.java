@@ -1,6 +1,7 @@
 package net.kogasachan.upgradedbread.event;
 
-import net.kogasachan.upgradedbread.item.ModItems;
+import net.kogasachan.upgradedbread.config.BreadConfigs;
+import net.kogasachan.upgradedbread.item.BreadItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -30,9 +31,10 @@ public class BreadRefreshEvent {
         Level level = event.getLevel();
         Player player = event.getEntity();
         BlockHitResult hitResult = event.getHitVec();
+        BlockPos clickedPos = hitResult.getBlockPos();
         ItemStack heldItem = event.getItemStack();
 
-        if (heldItem.isEmpty() || !heldItem.getItem().equals(ModItems.DRY_LONG_BREAD.get())) {
+        if (heldItem.isEmpty() || !heldItem.getItem().equals(BreadItems.DRY_LONG_BREAD.get())) {
             return;
         }
 
@@ -57,12 +59,18 @@ public class BreadRefreshEvent {
             return;
         }
 
+        if (isWaterCauldron) {
+            if (BreadConfigs.SERVER.consumeAllWater.get()) {
+                level.setBlock(clickedPos, Blocks.CAULDRON.defaultBlockState(), 3);
+            }
+        }
+
         if (!level.isClientSide) {
             if (!player.isCreative()) {
                 heldItem.shrink(1);
             }
 
-            ItemStack resultStack = new ItemStack(ModItems.FRESH_LONG_BREAD.get(), 1);
+            ItemStack resultStack = new ItemStack(BreadItems.FRESH_LONG_BREAD.get(), 1);
 
             if (!player.getInventory().add(resultStack)) {
                 player.drop(resultStack, false);

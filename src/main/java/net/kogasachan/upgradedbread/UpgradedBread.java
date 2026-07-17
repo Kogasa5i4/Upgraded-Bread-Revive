@@ -1,10 +1,11 @@
 package net.kogasachan.upgradedbread;
 
-import net.kogasachan.upgradedbread.block.ModBlocks;
-import net.kogasachan.upgradedbread.effect.ModEffects;
+import net.kogasachan.upgradedbread.block.BreadBlocks;
+import net.kogasachan.upgradedbread.config.BreadConfigs;
+import net.kogasachan.upgradedbread.effect.BreadEffects;
 import net.kogasachan.upgradedbread.event.BreadRefreshEvent;
-import net.kogasachan.upgradedbread.item.ModCreativeModeTabs;
-import net.kogasachan.upgradedbread.item.ModItems;
+import net.kogasachan.upgradedbread.item.BreadCreativeModeTabs;
+import net.kogasachan.upgradedbread.item.BreadItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -12,6 +13,7 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -29,11 +31,11 @@ public class UpgradedBread
     {
         IEventBus modEventBus = context.getModEventBus();
 
-        ModCreativeModeTabs.register(modEventBus);
+        BreadCreativeModeTabs.register(modEventBus);
 
-        ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
-        ModEffects.MOB_EFFECTS.register(modEventBus);
+        BreadItems.register(modEventBus);
+        BreadBlocks.register(modEventBus);
+        BreadEffects.MOB_EFFECTS.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -42,6 +44,8 @@ public class UpgradedBread
         modEventBus.addListener(this::addCreative);
 
         MinecraftForge.EVENT_BUS.register(new BreadRefreshEvent());
+
+        context.registerConfig(ModConfig.Type.SERVER, BreadConfigs.SERVER_SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

@@ -3,6 +3,7 @@
   "effect.upgradedbread.freezing_body": "*操控冷气程度的能力",
   "effect.upgradedbread.perfect_freeze": "完美冻结",
   "effect.upgradedbread.ke_la_body": "金坷垃",
+  "effect.upgradedbread.minor_health_boost": "生命提升（小幅）",
   "effect.upgradedbread.unovertakable": "你跑不过我你信吗",
   "item.upgradedbread.blaze_group": "炽热核心",
   "item.upgradedbread.breathe_essence": "气息精华",
@@ -66,7 +67,7 @@
   "item.upgradedbread.growth_essence": "金坷垃",
   "item.upgradedbread.life_essence": "生长精华",
   "item.upgradedbread.chocliz_essence": "巧乐兹秘方",
-  "itemGroup.upgradedbreadtab": "面包增强",
+  "item_group.upgradedbread.upgradedbreadtab": "面包增强",
   "jei.category.upgradedbread.bread_refresh": "蘸水",
   "tooltip.upgradedbread.carbohydrate_block.tooltip": "§7踩上去有惊喜§r",
   "tooltip.upgradedbread.carbohydrate_essence.tooltip": "§7碳水的力量§r",
@@ -104,7 +105,7 @@
   "tooltip.upgradedbread.lees_waffle.tale1": "§7§m不是李家华夫饼§r",
   "tooltip.upgradedbread.chocliz_bread.tooltip": "§7食用后大幅提升你的攻速和移速，但是代价是什么呢§r",
   "tooltip.upgradedbread.chocliz_bread.tale1": "§7§m本物品与现实人物和现实商标均无关§r",
-  "tooltip.upgradedbread.chocliz_bread.tale2": "§d史蒂夫你粒子有点发紫，可能是心脏不好§r",
+  "tooltip.upgradedbread.chocliz_bread.tale2": "§d史蒂夫你的粒子有点发紫，可能是血量不好§r",
   "tooltip.upgradedbread.chocliz_bread.tale3": "§d你跑不过我你信吗§r"
 }
 

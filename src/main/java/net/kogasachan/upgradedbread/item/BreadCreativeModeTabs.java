@@ -17,7 +17,7 @@ public class BreadCreativeModeTabs {
 
     public static final RegistryObject<CreativeModeTab> BREAD_TAB = CREATIVE_MODE_TABS.register("bread_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(BreadItems.FRESH_LONG_BREAD.get()))
-                    .title(Component.translatable("itemGroup.upgradedbreadtab"))
+                    .title(Component.translatable("item_group.upgradedbread.upgradedbreadtab"))
                     .displayItems((pParameters, pOutput) -> {
                         //essence----------------------------------------------------------------------------------------------->
                         pOutput.accept(BreadItems.HARD_BREAD.get());

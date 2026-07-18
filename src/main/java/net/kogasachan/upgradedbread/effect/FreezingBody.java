@@ -31,14 +31,15 @@ public class FreezingBody extends MobEffect {
 
     //来自原版冰霜行者附魔的代码
     public static void onEntityMoved(LivingEntity pLiving, Level pLevel, BlockPos pPos, int pLevelConflicting) {
-        if (pLiving.onGround()) {
+        if (pLiving.onGround() && !pLiving.isInWater()) {
+            //新增!pLiving.isInWater()语句是为了防止在岸边1格深的水中前进并上浮时触发效果
             BlockState blockstate = Blocks.FROSTED_ICE.defaultBlockState();
             int i = Math.min(16, 2 + pLevelConflicting);
             BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 
             int dy;
             if (pLiving.getY() % 1 != 0) dy = 0; else dy = -1;
-            //防止因为不完整方块无法生效
+            //新增dy的判别防止因为不完整方块无法生效
 
             for(BlockPos blockpos : BlockPos.betweenClosed(pPos.offset(-i, dy, -i), pPos.offset(i, dy, i))) {
                 if (blockpos.closerToCenterThan(pLiving.position(), i)) {

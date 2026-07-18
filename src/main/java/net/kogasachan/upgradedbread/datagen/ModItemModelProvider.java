@@ -37,6 +37,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         essenceItem(BreadItems.FREEZING_ESSENCE);
         simpleItem(BreadItems.CARBOHYDRATE_INGOT);
 
+        //essence(new)------------------------------------------------------------------------------------------>
+        essenceItem(BreadItems.GROWTH_ESSENCE);
+        essenceItem(BreadItems.LIFE_ESSENCE);
+        essenceItem(BreadItems.CHOCLIZ_ESSENCE);
+
         //food-------------------------------------------------------------------------------------------------->
         simpleItem(BreadItems.FRESH_LONG_BREAD);
         simpleItem(BreadItems.DRY_LONG_BREAD);
@@ -55,6 +60,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(BreadItems.FISHING_LONG_BREAD);
         simpleItem(BreadItems.FREEZING_LONG_BREAD);
 
+        //food(new)--------------------------------------------------------------------------------------------->
+        simpleItem(BreadItems.KE_LA_BREAD);
+        simpleItem(BreadItems.LEES_WAFFLE);
+        simpleItem(BreadItems.CHOCLIZ_BREAD);
+
         //material---------------------------------------------------------------------------------------------->
         simpleItem(BreadItems.SUGAR_GROUP);
         simpleItem(BreadItems.BLAZE_GROUP);
@@ -71,6 +81,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(BreadItems.INFLUENCE_GROUP);
         simpleItem(BreadItems.FISHING_GROUP);
         simpleItem(BreadItems.FREEZING_GROUP);
+
+        //material(new)------------------------------------------------------------------------------------------->
+        simpleItem(BreadItems.BONE_MEAL_GROUP);
+        simpleItem(BreadItems.TOTEM_GROUP);
+        simpleItem(BreadItems.COCOA_GROUP);
 
         //product----------------------------------------------------------------------------------------------->
         simpleItem(BreadItems.HEART_OF_THE_COAL);

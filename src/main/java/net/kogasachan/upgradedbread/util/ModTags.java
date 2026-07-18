@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static class Blocks {
-        public static final TagKey<Block> DROP_LOST_ENERGY_CORE = tag(UpgradedBread.MODID, "drop_lost_energy_core");
+        public static final TagKey<Block> DROPS_LOST_ENERGY_CORE = tag(UpgradedBread.MODID, "drops_lost_energy_core");
 
         private static TagKey<Block> tag(String namespace, String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(namespace, name));

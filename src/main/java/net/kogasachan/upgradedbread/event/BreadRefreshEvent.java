@@ -11,6 +11,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
@@ -59,12 +60,6 @@ public class BreadRefreshEvent {
             return;
         }
 
-        if (isWaterCauldron) {
-            if (BreadConfigs.SERVER.consumeAllWater.get()) {
-                level.setBlock(clickedPos, Blocks.CAULDRON.defaultBlockState(), 3);
-            }
-        }
-
         if (!level.isClientSide) {
             if (!player.isCreative()) {
                 heldItem.shrink(1);
@@ -78,6 +73,27 @@ public class BreadRefreshEvent {
         }
 
         event.setCancellationResult(InteractionResult.SUCCESS);
+
+        if (targetState.getBlock() == Blocks.WATER_CAULDRON) {
+            BlockState cauldronState = level.getBlockState(clickedPos);
+            if (!cauldronState.hasProperty(BlockStateProperties.LEVEL_CAULDRON)) {
+                return;
+            }
+
+            int currentLevel = cauldronState.getValue(BlockStateProperties.LEVEL_CAULDRON);
+            int mode = BreadConfigs.SERVER.waterConsumptionMode.get();
+
+            if (mode == 1) {
+                int newLevel = Math.max(currentLevel - 1, 0);
+                if (newLevel == 0) {
+                    level.setBlock(clickedPos, Blocks.CAULDRON.defaultBlockState(), 3);
+                } else {
+                    level.setBlock(clickedPos, cauldronState.setValue(BlockStateProperties.LEVEL_CAULDRON, newLevel), 3);
+                }
+            } else if (mode == 2) {
+                level.setBlock(clickedPos, Blocks.CAULDRON.defaultBlockState(), 3);
+            }
+        }
     }
 
     private boolean isWater(BlockHitResult result, Level level) {

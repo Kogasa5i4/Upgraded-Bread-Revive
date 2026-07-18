@@ -166,6 +166,32 @@ public class BreadItems {
                 }
             });
 
+    //essence(new)------------------------------------------------------------------------------------------>
+    public static final RegistryObject<Item> GROWTH_ESSENCE = ITEMS.register("growth_essence",
+            () -> new SimpleFoiledItem(new Item.Properties().rarity(Rarity.EPIC)) {
+                @Override
+                public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
+                    super.appendHoverText(itemStack, level, tooltip, flag);
+                    tooltip.add(Component.translatable("tooltip.upgradedbread.growth_essence.tooltip"));
+                }
+            });
+    public static final RegistryObject<Item> LIFE_ESSENCE = ITEMS.register("life_essence",
+            () -> new SimpleFoiledItem(new Item.Properties().rarity(Rarity.EPIC)) {
+                @Override
+                public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
+                    super.appendHoverText(itemStack, level, tooltip, flag);
+                    tooltip.add(Component.translatable("tooltip.upgradedbread.life_essence.tooltip"));
+                }
+            });
+    public static final RegistryObject<Item> CHOCLIZ_ESSENCE = ITEMS.register("chocliz_essence",
+            () -> new SimpleFoiledItem(new Item.Properties().rarity(Rarity.EPIC)) {
+                @Override
+                public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
+                    super.appendHoverText(itemStack, level, tooltip, flag);
+                    tooltip.add(Component.translatable("tooltip.upgradedbread.chocliz_essence.tooltip"));
+                }
+            });
+
     //food-------------------------------------------------------------------------------------------------->
     public static final RegistryObject<Item> FRESH_LONG_BREAD = ITEMS.register("fresh_long_bread",
             () -> new Item(new Item.Properties().stacksTo(16).
@@ -185,7 +211,8 @@ public class BreadItems {
                 }
             });
     public static final RegistryObject<Item> STRENGTH_LONG_BREAD = ITEMS.register("strength_long_bread",
-            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).alwaysEat()
+                    .nutrition(10).saturationMod(0.8F).
                     effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1800, 2), 1.0F).build())) {
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
@@ -194,7 +221,8 @@ public class BreadItems {
                 }
             });
     public static final RegistryObject<Item> NIGHT_VISION_LONG_BREAD = ITEMS.register("night_vision_long_bread",
-            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).alwaysEat()
+                    .nutrition(10).saturationMod(0.8F).
                     effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 9600, 0), 1.0F).build())) {
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
@@ -203,7 +231,8 @@ public class BreadItems {
                 }
             });
     public static final RegistryObject<Item> BREATHE_LONG_BREAD = ITEMS.register("breathe_long_bread",
-            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).alwaysEat()
+                    .nutrition(10).saturationMod(0.8F).
                     effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, 9600, 0), 1.0F).build())) {
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
@@ -212,7 +241,8 @@ public class BreadItems {
                 }
             });
     public static final RegistryObject<Item> FIRE_RESISTANCE_LONG_BREAD = ITEMS.register("fire_resistance_long_bread",
-            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).alwaysEat()
+                    .nutrition(10).saturationMod(0.8F).
                     effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 9600, 0), 1.0F).build())) {
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
@@ -221,7 +251,8 @@ public class BreadItems {
                 }
             });
     public static final RegistryObject<Item> HEALTH_LONG_BREAD = ITEMS.register("health_long_bread",
-            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).alwaysEat()
+                    .nutrition(10).saturationMod(0.8F).
                     effect(() -> new MobEffectInstance(MobEffects.HEAL, 3, 0), 1.0F).build())) {
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
@@ -230,7 +261,8 @@ public class BreadItems {
                 }
             });
     public static final RegistryObject<Item> INVISIBILITY_LONG_BREAD = ITEMS.register("invisibility_long_bread",
-            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).alwaysEat()
+                    .nutrition(10).saturationMod(0.8F).
                     effect(() -> new MobEffectInstance(MobEffects.INVISIBILITY, 9600, 0), 1.0F).build())) {
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
@@ -239,7 +271,8 @@ public class BreadItems {
                 }
             });
     public static final RegistryObject<Item> JUMP_BOOST_LONG_BREAD = ITEMS.register("jump_boost_long_bread",
-            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).alwaysEat()
+                    .nutrition(10).saturationMod(0.8F).
                     effect(() -> new MobEffectInstance(MobEffects.JUMP, 1800, 2), 1.0F).build())) {
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
@@ -248,7 +281,8 @@ public class BreadItems {
                 }
             });
     public static final RegistryObject<Item> REGENERATION_LONG_BREAD = ITEMS.register("regeneration_long_bread",
-            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).alwaysEat()
+                    .nutrition(10).saturationMod(0.8F).
                     effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 440, 2), 1.0F).build())) {
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
@@ -257,7 +291,8 @@ public class BreadItems {
                 }
             });
     public static final RegistryObject<Item> SLOW_FALLING_LONG_BREAD = ITEMS.register("slow_falling_long_bread",
-            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).alwaysEat()
+                    .nutrition(10).saturationMod(0.8F).
                     effect(() -> new MobEffectInstance(MobEffects.SLOW_FALLING, 4800, 0), 1.0F).build())) {
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
@@ -266,7 +301,8 @@ public class BreadItems {
                 }
             });
     public static final RegistryObject<Item> SPEED_LONG_BREAD = ITEMS.register("speed_long_bread",
-            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).alwaysEat()
+                    .nutrition(10).saturationMod(0.8F).
                     effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1800, 2), 1.0F).build())) {
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
@@ -287,7 +323,8 @@ public class BreadItems {
                 }
             });
     public static final RegistryObject<Item> INFLUENCE_LONG_BREAD = ITEMS.register("influence_long_bread",
-            () -> new SimpleFoiledItem(new Item.Properties().stacksTo(16).rarity(Rarity.EPIC).food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).
+            () -> new SimpleFoiledItem(new Item.Properties().stacksTo(16).rarity(Rarity.EPIC).food((new FoodProperties.Builder()).alwaysEat()
+                    .nutrition(10).saturationMod(0.8F).
                     effect(() -> new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 1800, 4), 1.0F).
                     effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, 1800, 4), 1.0F).
                     effect(() -> new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 1800, 3), 1.0F).
@@ -300,7 +337,8 @@ public class BreadItems {
                 }
             });
     public static final RegistryObject<Item> FISHING_LONG_BREAD = ITEMS.register("fishing_long_bread",
-            () -> new SimpleFoiledItem(new Item.Properties().stacksTo(16).rarity(Rarity.EPIC).food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).
+            () -> new SimpleFoiledItem(new Item.Properties().stacksTo(16).rarity(Rarity.EPIC).food((new FoodProperties.Builder()).alwaysEat()
+                    .nutrition(10).saturationMod(0.8F).
                     effect(() -> new MobEffectInstance(MobEffects.LUCK, 9600, 4), 1.0F).
                     effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 9600, 0), 1.0F).build())) {
                 @Override
@@ -313,7 +351,8 @@ public class BreadItems {
                 }
             });
     public static final RegistryObject<Item> FREEZING_LONG_BREAD = ITEMS.register("freezing_long_bread",
-            () -> new SimpleFoiledItem(new Item.Properties().stacksTo(16).rarity(Rarity.RARE).food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).
+            () -> new SimpleFoiledItem(new Item.Properties().stacksTo(16).rarity(Rarity.RARE).food((new FoodProperties.Builder()).alwaysEat()
+                    .nutrition(10).saturationMod(0.8F).
                     effect(()-> new MobEffectInstance(BreadEffects.FREEZING_BODY.get(),1800,0),1.0F).build())){
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
@@ -325,6 +364,48 @@ public class BreadItems {
                     tooltip.add(Component.translatable("tooltip.upgradedbread.support.marshall"));
                 }
             });
+
+//food(new)--------------------------------------------------------------------------------------------->
+    public static final RegistryObject<Item> KE_LA_BREAD =
+            ITEMS.register("ke_la_bread",
+                    () -> new SimpleFoiledItem(new Item.Properties().stacksTo(16).rarity(Rarity.RARE).food(new FoodProperties.Builder().nutrition(5).alwaysEat()
+                            .saturationMod(0.6f).
+                            effect(() -> new MobEffectInstance(BreadEffects.KE_LA_BODY.get(), 600, 0), 1.0f).build())){
+                @Override
+                public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
+                    super.appendHoverText(itemStack, level, tooltip, flag);
+                    tooltip.add(Component.translatable("tooltip.upgradedbread.ke_la_bread.tooltip"));
+                    tooltip.add(Component.translatable("tooltip.upgradedbread.ke_la_bread.tale1"));
+                    tooltip.add(Component.translatable("tooltip.upgradedbread.support.marshall"));
+                }
+            });
+    public static final RegistryObject<Item> LEES_WAFFLE =
+            ITEMS.register("lees_waffle",
+                    () -> new SimpleFoiledItem(new Item.Properties().stacksTo(16).rarity(Rarity.RARE).food(new FoodProperties.Builder().alwaysEat()
+                            .nutrition(5).saturationMod(0.6f).build())){
+                        @Override
+                        public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
+                            super.appendHoverText(itemStack, level, tooltip, flag);
+                    tooltip.add(Component.translatable("tooltip.upgradedbread.lees_waffle.tooltip"));
+                    tooltip.add(Component.translatable("tooltip.upgradedbread.lees_waffle.tale1"));
+                            tooltip.add(Component.translatable("tooltip.upgradedbread.support.marshall"));
+                        }
+                    });
+    public static final RegistryObject<Item> CHOCLIZ_BREAD =
+            ITEMS.register("chocliz_bread",
+                    () -> new SimpleFoiledItem(new Item.Properties().stacksTo(16).rarity(Rarity.RARE).food(new FoodProperties.Builder().alwaysEat()
+                            .nutrition(5).saturationMod(0.6f).
+                            effect(() -> new MobEffectInstance(BreadEffects.UNOVERTAKABLE.get(), 6000, 0), 1.0f).build())){
+                        @Override
+                        public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
+                            super.appendHoverText(itemStack, level, tooltip, flag);
+                    tooltip.add(Component.translatable("tooltip.upgradedbread.chocliz_bread.tooltip"));
+                    tooltip.add(Component.translatable("tooltip.upgradedbread.chocliz_bread.tale1"));
+                    tooltip.add(Component.translatable("tooltip.upgradedbread.chocliz_bread.tale2"));
+                    tooltip.add(Component.translatable("tooltip.upgradedbread.chocliz_bread.tale3"));
+                            tooltip.add(Component.translatable("tooltip.upgradedbread.support.tincyclopedia"));
+                        }
+                    });
 
 //material---------------------------------------------------------------------------------------------->
     public static final RegistryObject<Item> SUGAR_GROUP = ITEMS.register("sugar_group",
@@ -357,8 +438,16 @@ public class BreadItems {
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> FREEZING_GROUP = ITEMS.register("freezing_group",
             ()-> new Item(new Item.Properties().rarity(Rarity.RARE)));
-    
-    //product----------------------------------------------------------------------------------------------->
+
+//material(new)------------------------------------------------------------------------------------------->
+    public static final RegistryObject<Item> BONE_MEAL_GROUP = ITEMS.register("bone_meal_group",
+            ()-> new Item(new Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> TOTEM_GROUP = ITEMS.register("totem_group",
+            ()-> new Item(new Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> COCOA_GROUP = ITEMS.register("cocoa_group",
+            ()-> new Item(new Item.Properties().rarity(Rarity.RARE)));
+
+//product------------------------------------------------------------------------------------------------->
     public static final RegistryObject<Item> HEART_OF_THE_COAL = ITEMS.register("heart_of_the_coal",
             () -> new Item(new Item.Properties()) {
                 @Override

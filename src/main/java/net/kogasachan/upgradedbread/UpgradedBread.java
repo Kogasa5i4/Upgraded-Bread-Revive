@@ -4,6 +4,7 @@ import net.kogasachan.upgradedbread.block.BreadBlocks;
 import net.kogasachan.upgradedbread.config.BreadConfigs;
 import net.kogasachan.upgradedbread.effect.BreadEffects;
 import net.kogasachan.upgradedbread.event.BreadRefreshEvent;
+import net.kogasachan.upgradedbread.event.Unovertakable;
 import net.kogasachan.upgradedbread.item.BreadCreativeModeTabs;
 import net.kogasachan.upgradedbread.item.BreadItems;
 import net.minecraftforge.api.distmarker.Dist;
@@ -44,6 +45,9 @@ public class UpgradedBread
         modEventBus.addListener(this::addCreative);
 
         MinecraftForge.EVENT_BUS.register(new BreadRefreshEvent());
+//        MinecraftForge.EVENT_BUS.register(new FreezingAttackEvent());
+        MinecraftForge.EVENT_BUS.register(new Unovertakable());
+//        MinecraftForge.EVENT_BUS.register(new BreadRegenerateEvent());
 
         context.registerConfig(ModConfig.Type.SERVER, BreadConfigs.SERVER_SPEC);
     }

@@ -20,7 +20,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider pProvider) {
-        this.tag(ModTags.Blocks.DROP_LOST_ENERGY_CORE)
+        this.tag(ModTags.Blocks.DROPS_LOST_ENERGY_CORE)
                 .add(BreadBlocks.CARBOHYDRATE_BLOCK.get());
         this.tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(BreadBlocks.CARBOHYDRATE_BLOCK.get());

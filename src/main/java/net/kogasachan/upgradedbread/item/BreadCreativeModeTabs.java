@@ -39,6 +39,11 @@ public class BreadCreativeModeTabs {
                         pOutput.accept(BreadItems.FREEZING_ESSENCE.get());
                         pOutput.accept(BreadItems.CARBOHYDRATE_INGOT.get());
 
+                        //essence(new)------------------------------------------------------------------------------------------>
+                        pOutput.accept(BreadItems.GROWTH_ESSENCE.get());
+                        pOutput.accept(BreadItems.LIFE_ESSENCE.get());
+                        pOutput.accept(BreadItems.CHOCLIZ_ESSENCE.get());
+
                         //food-------------------------------------------------------------------------------------------------->
                         pOutput.accept(Items.BREAD);
                         pOutput.accept(BreadItems.FRESH_LONG_BREAD.get());
@@ -58,11 +63,16 @@ public class BreadCreativeModeTabs {
                         pOutput.accept(BreadItems.FISHING_LONG_BREAD.get());
                         pOutput.accept(BreadItems.FREEZING_LONG_BREAD.get());
 
-                        //material(vanilla)---------------------------------------------------------------------------------------------->
+                        //food(new)--------------------------------------------------------------------------------------------->
+                        pOutput.accept(BreadItems.KE_LA_BREAD.get());
+                        pOutput.accept(BreadItems.LEES_WAFFLE.get());
+                        pOutput.accept(BreadItems.CHOCLIZ_BREAD.get());
+
+                        //material(vanilla)------------------------------------------------------------------------------------->
                         pOutput.accept(Items.WHEAT);
                         pOutput.accept(Items.WHEAT_SEEDS);
 
-                        //material(mod)---------------------------------------------------------------------------------------------->
+                        //material(mod)----------------------------------------------------------------------------------------->
                         pOutput.accept(BreadItems.SUGAR_GROUP.get());
                         pOutput.accept(BreadItems.BLAZE_GROUP.get());
                         pOutput.accept(BreadItems.FOOT_GROUP.get());
@@ -79,13 +89,18 @@ public class BreadCreativeModeTabs {
                         pOutput.accept(BreadItems.FISHING_GROUP.get());
                         pOutput.accept(BreadItems.FREEZING_GROUP.get());
 
+                        //material(new)------------------------------------------------------------------------------------------->
+                        pOutput.accept(BreadItems.BONE_MEAL_GROUP.get());
+                        pOutput.accept(BreadItems.TOTEM_GROUP.get());
+                        pOutput.accept(BreadItems.COCOA_GROUP.get());
+
                         //product----------------------------------------------------------------------------------------------->
                         pOutput.accept(BreadItems.HEART_OF_THE_COAL.get());
                         pOutput.accept(BreadItems.LOST_ENERGY_CORE.get());
                         pOutput.accept(BreadItems.LOW_ENERGY_CORE.get());
                         pOutput.accept(BreadItems.HIGH_ENERGY_CORE.get());
 
-                        //block---------------------------------------------------------------------------------------------->
+                        //block------------------------------------------------------------------------------------------------->
                         pOutput.accept(Items.HAY_BLOCK);
                         pOutput.accept(BreadBlocks.CARBOHYDRATE_BLOCK.get());
                     })

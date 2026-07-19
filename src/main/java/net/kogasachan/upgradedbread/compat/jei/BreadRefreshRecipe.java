@@ -17,7 +17,8 @@ import org.jetbrains.annotations.NotNull;
  */
 public class BreadRefreshRecipe implements Recipe<Container> {
     //自定义配方类型(用于jei分类)
-    public static final RecipeType<BreadRefreshRecipe> TYPE = new RecipeType<>() { };
+    public static final RecipeType<BreadRefreshRecipe> TYPE = new RecipeType<>() {
+    };
 
     //输入输出设定
     private final Ingredient input = Ingredient.of(BreadItems.DRY_LONG_BREAD.get());
@@ -63,6 +64,7 @@ public class BreadRefreshRecipe implements Recipe<Container> {
     public Ingredient getInput() {
         return input;
     }
+
     public ItemStack getOutput() {
         return output;
     }

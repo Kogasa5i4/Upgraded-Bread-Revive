@@ -52,20 +52,24 @@ public class UpgradedBread {
     }
 
     //位于模组加载的公共初始化阶段, 可用于注册酿造配方, 网络包, 复杂配方序列化器等
-    private void commonSetup(final FMLCommonSetupEvent event) { }
+    private void commonSetup(final FMLCommonSetupEvent event) {
+    }
 
     //在创造模式物品栏构建时触发, 可用于将物品添加到已有的创造模式标签页
-    private void addCreative(BuildCreativeModeTabContentsEvent event) { }
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+    }
 
     //在服务器启动时触发, 可用于加载服务器专属数据或执行服务器初始化
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) { }
+    public void onServerStarting(ServerStartingEvent event) {
+    }
 
     //客户端专用的事件订阅类
     //在客户端初始化阶段执行, 常用于注册渲染器(如物品模型, 特殊方块渲染器)或加载客户端资源
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) { }
+        public static void onClientSetup(FMLClientSetupEvent event) {
+        }
     }
 }

@@ -64,9 +64,12 @@ public class BreadCreativeModeTabs {
                         pOutput.accept(BreadItems.FREEZING_LONG_BREAD.get());
 
                         //food(new)--------------------------------------------------------------------------------------------->
-                        pOutput.accept(BreadItems.KE_LA_BREAD.get());
+                        pOutput.accept(BreadItems.KE_LA_LONG_BREAD.get());
                         pOutput.accept(BreadItems.LEES_WAFFLE.get());
                         pOutput.accept(BreadItems.CHOCLIZ_BREAD.get());
+                        pOutput.accept(BreadItems.BAGUETTE_BAGUETTE.get());
+                        pOutput.accept(BreadItems.MICRO_SOFT_BREAD.get());
+                        pOutput.accept(BreadItems.MACRO_HARD_BREAD.get());
 
                         //material(vanilla)------------------------------------------------------------------------------------->
                         pOutput.accept(Items.WHEAT);

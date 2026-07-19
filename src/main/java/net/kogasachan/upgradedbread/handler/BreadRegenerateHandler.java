@@ -1,4 +1,4 @@
-package net.kogasachan.upgradedbread.event;
+package net.kogasachan.upgradedbread.handler;
 
 import net.kogasachan.upgradedbread.UpgradedBread;
 import net.kogasachan.upgradedbread.config.BreadConfigs;
@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @Mod.EventBusSubscriber(modid = UpgradedBread.MODID)
-public class BreadRegenerateEvent {
+public class BreadRegenerateHandler {
     private static final Map<UUID, Integer> EAT_COUNT = new HashMap<>();
 
     @SubscribeEvent

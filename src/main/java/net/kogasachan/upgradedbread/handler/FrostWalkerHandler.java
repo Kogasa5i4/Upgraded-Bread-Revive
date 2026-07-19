@@ -1,34 +1,15 @@
-package net.kogasachan.upgradedbread.effect;
+package net.kogasachan.upgradedbread.handler;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FrostedIceBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import org.jetbrains.annotations.NotNull;
 
-public class FreezingBody extends MobEffect {
-    public FreezingBody(MobEffectCategory mobEffectCategory, int color) {
-        super(mobEffectCategory, color);
-    }
-
-    @Override
-    public void applyEffectTick(@NotNull LivingEntity pLivingEntity, int pAmplifier) {
-        super.applyEffectTick(pLivingEntity, pAmplifier);
-        if (pLivingEntity.level().isClientSide()) return;
-        onEntityMoved(pLivingEntity, pLivingEntity.level(), pLivingEntity.blockPosition(), pAmplifier);
-    }
-
-    @Override
-    public boolean isDurationEffectTick(int pDuration, int pAmplifier) {
-        return true;
-    }
-
+public class FrostWalkerHandler {
     //来自原版冰霜行者附魔的代码
     public static void onEntityMoved(LivingEntity pLiving, Level pLevel, BlockPos pPos, int pLevelConflicting) {
         if (pLiving.onGround() && !pLiving.isInWater()) {

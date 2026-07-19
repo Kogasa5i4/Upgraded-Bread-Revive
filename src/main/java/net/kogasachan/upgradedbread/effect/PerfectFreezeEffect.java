@@ -4,8 +4,8 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 
-public class PerfectFreeze extends MobEffect {
-    public PerfectFreeze(MobEffectCategory mobEffectCategory, int color){
+public class PerfectFreezeEffect extends MobEffect {
+    public PerfectFreezeEffect(MobEffectCategory mobEffectCategory, int color){
         super(mobEffectCategory,color);
     }
 

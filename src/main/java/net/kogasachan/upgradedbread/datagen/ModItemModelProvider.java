@@ -61,9 +61,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(BreadItems.FREEZING_LONG_BREAD);
 
         //food(new)--------------------------------------------------------------------------------------------->
-        simpleItem(BreadItems.KE_LA_BREAD);
+        simpleItem(BreadItems.KE_LA_LONG_BREAD);
         simpleItem(BreadItems.LEES_WAFFLE);
         simpleItem(BreadItems.CHOCLIZ_BREAD);
+        simpleItem(BreadItems.BAGUETTE_BAGUETTE);
+        simpleItem(BreadItems.MICRO_SOFT_BREAD);
+        simpleItem(BreadItems.MACRO_HARD_BREAD);
 
         //material---------------------------------------------------------------------------------------------->
         simpleItem(BreadItems.SUGAR_GROUP);

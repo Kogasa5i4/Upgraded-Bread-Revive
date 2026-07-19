@@ -1,4 +1,4 @@
-package net.kogasachan.upgradedbread.event;
+package net.kogasachan.upgradedbread.handler;
 
 import net.kogasachan.upgradedbread.UpgradedBread;
 import net.kogasachan.upgradedbread.effect.BreadEffects;
@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.Random;
 
 @Mod.EventBusSubscriber(modid = UpgradedBread.MODID,value = Dist.CLIENT)
-public class FreezingAttackEvent {
+public class FreezingAttackHandler {
     @SubscribeEvent
     public static void FreezeAttack(AttackEntityEvent event){
         Player player = event.getEntity();

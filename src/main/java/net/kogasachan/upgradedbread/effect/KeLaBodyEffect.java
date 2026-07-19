@@ -10,8 +10,8 @@ import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-public class KeLaBody extends MobEffect {
-    public KeLaBody(MobEffectCategory mobEffectCategory, int color) {
+public class KeLaBodyEffect extends MobEffect {
+    public KeLaBodyEffect(MobEffectCategory mobEffectCategory, int color) {
         super(mobEffectCategory, color);
     }
 

@@ -508,7 +508,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_essence", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(BreadItems.CARBOHYDRATE_ESSENCE.get()).build()))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.KE_LA_BREAD.get(),1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.KE_LA_LONG_BREAD.get(),1)
                 .define('B', BreadItems.FRESH_LONG_BREAD.get())
                 .define('E', BreadItems.GROWTH_ESSENCE.get())
                 .pattern("EEE")
@@ -574,6 +574,28 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_chocliz",inventoryTrigger(ItemPredicate.Builder.item()
                         .of(BreadItems.CHOCLIZ_BREAD.get()).build()))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.BAGUETTE_BAGUETTE.get(), 1)
+                .define('#', BreadItems.FRESH_LONG_BREAD.get())
+                .pattern("  #")
+                .pattern(" # ")
+                .pattern("#  ")
+                .unlockedBy("has_long_bread", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(BreadItems.FRESH_LONG_BREAD.get()).build()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.BREAD, 1)
+                .define('#', BreadItems.MICRO_SOFT_BREAD.get())
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_bread", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.BREAD).build()))
+                .save(pWriter, "bread_from_micro_soft_bread");
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.MACRO_HARD_BREAD.get(), 1)
+                .define('#', BreadItems.FRESH_LONG_BREAD.get())
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_long_bread", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(BreadItems.FRESH_LONG_BREAD.get()).build()))
+                .save(pWriter);
 
         //Shapeless--------------------------------------------------------------------------------->
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BREAD, 3)
@@ -586,6 +608,18 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_lost_core", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(BreadItems.LOST_ENERGY_CORE.get()).build()))
                 .save(pWriter);
+
+        //Shapeless(new)---------------------------------------------------------------------------->
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, BreadItems.MICRO_SOFT_BREAD.get(), 4)
+                .requires(Items.BREAD)
+                .unlockedBy("has_bread", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.BREAD).build()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, BreadItems.FRESH_LONG_BREAD.get(), 4)
+                .requires(BreadItems.MACRO_HARD_BREAD.get())
+                .unlockedBy("has_long_bread", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(BreadItems.FRESH_LONG_BREAD.get()).build()))
+                .save(pWriter, "fresh_long_bread_from_macro_hard_bread");
 
         //nineBlockStorage-------------------------------------------------------------------------->
         nineBlockStorageRecipes(pWriter,

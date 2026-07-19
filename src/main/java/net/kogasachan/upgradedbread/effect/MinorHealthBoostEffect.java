@@ -10,10 +10,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
-public class MinorHealthBoost extends MobEffect {
+public class MinorHealthBoostEffect extends MobEffect {
     private static final UUID HEALTH_MOD_UUID = UUID.fromString("a1b2c3d4-e5f6-7890-abcd-ef1234567890");
 
-    public MinorHealthBoost(MobEffectCategory category, int color) {
+    public MinorHealthBoostEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
 

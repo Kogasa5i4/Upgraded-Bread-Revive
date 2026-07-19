@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class Unovertakable {
+public class UnovertakableEvent {
     private static final UUID HEALTH_PENALTY_UUID = UUID.fromString("c3d4e5f6-a7b8-90ab-cdef-1234567890ab");
     private static final Map<UUID, Integer> PENALTY_COUNT = new HashMap<>();
     private static final Map<UUID, Integer> EAT_COUNT = new HashMap<>();

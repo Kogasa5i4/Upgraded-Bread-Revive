@@ -10,11 +10,11 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
-public class Unovertakable extends MobEffect {
+public class UnovertakableEffect extends MobEffect {
     private static final UUID SPEED_MOD_UUID = UUID.fromString("a1b2c3d4-e5f6-7890-abcd-ef1234567890");
     private static final UUID ATTACK_SPEED_MOD_UUID = UUID.fromString("b2c3d4e5-f6a7-8901-bcde-f234567890ab");
 
-    public Unovertakable(MobEffectCategory category, int color) {
+    public UnovertakableEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
 

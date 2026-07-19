@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smoking",
-  "ingredient": {
-    "item": "kogasas_thinking:fresh_long_bread"
-  },
-  "result": "kogasas_thinking:dry_long_bread",
-  "experience": 0.5,
-  "cookingtime": 100
-}

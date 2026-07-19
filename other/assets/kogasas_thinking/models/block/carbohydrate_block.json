@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "kogasas_thinking:block/carbohydrate_block"
-  }
-}

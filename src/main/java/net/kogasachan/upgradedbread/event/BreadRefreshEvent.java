@@ -22,6 +22,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.jetbrains.annotations.NotNull;
 
 public class BreadRefreshEvent {
+    //面包蘸水
+    //各种可判定为水方块的东西
+    //实际上水不能作为指向方块(因为是流体), 所以只有盛水的坩埚生效
     private static final Block[] WATER_BLOCKS = {
             Blocks.WATER,
             Blocks.WATER_CAULDRON
@@ -35,14 +38,17 @@ public class BreadRefreshEvent {
         BlockPos clickedPos = hitResult.getBlockPos();
         ItemStack heldItem = event.getItemStack();
 
+        //判断手里的物品能不能蘸水
         if (heldItem.isEmpty() || !heldItem.getItem().equals(BreadItems.DRY_LONG_BREAD.get())) {
             return;
         }
 
+        //本来想获取玩家的触及距离的, 但是实际上交互本身已经被这一条件限制, 所以没必要
         double reachDistance = Integer.MAX_VALUE;
         Vec3 eyePos = player.getEyePosition(1.0F);
         Vec3 lookVec = player.getViewVector(1.0F);
         Vec3 endPos = eyePos.add(lookVec.scale(reachDistance));
+        //寻找玩家视线上是否有水
         ClipContext context = new ClipContext(
                 eyePos,
                 endPos,
@@ -54,19 +60,21 @@ public class BreadRefreshEvent {
         boolean isWater = isWater(result, level);
 
         BlockState targetState = level.getBlockState(hitResult.getBlockPos());
-        boolean isWaterCauldron = isWaterBlock(targetState.getBlock());
+        boolean isWaterBlock = isWaterBlock(targetState.getBlock());
 
-        if (!isWater && !isWaterCauldron) {
+        if (!isWater && !isWaterBlock) {
             return;
         }
 
         if (!level.isClientSide) {
+            //创造模式不消耗
             if (!player.isCreative()) {
                 heldItem.shrink(1);
             }
 
             ItemStack resultStack = new ItemStack(BreadItems.FRESH_LONG_BREAD.get(), 1);
 
+            //背包满了则生成掉落物
             if (!player.getInventory().add(resultStack)) {
                 player.drop(resultStack, false);
             }
@@ -74,6 +82,7 @@ public class BreadRefreshEvent {
 
         event.setCancellationResult(InteractionResult.SUCCESS);
 
+        //根据配置文件消耗炼药锅里的水
         if (targetState.getBlock() == Blocks.WATER_CAULDRON) {
             BlockState cauldronState = level.getBlockState(clickedPos);
             if (!cauldronState.hasProperty(BlockStateProperties.LEVEL_CAULDRON)) {

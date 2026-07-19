@@ -8,8 +8,9 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModBlockStateProvider extends BlockStateProvider {
-    public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
+public class BreadBlockStateProvider extends BlockStateProvider {
+    //方块状态
+    public BreadBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, UpgradedBread.MODID, exFileHelper);
     }
 

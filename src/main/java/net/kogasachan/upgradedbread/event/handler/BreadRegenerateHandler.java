@@ -1,4 +1,4 @@
-package net.kogasachan.upgradedbread.handler;
+package net.kogasachan.upgradedbread.event.handler;
 
 import net.kogasachan.upgradedbread.UpgradedBread;
 import net.kogasachan.upgradedbread.config.BreadConfigs;
@@ -19,6 +19,7 @@ import java.util.UUID;
 
 @Mod.EventBusSubscriber(modid = UpgradedBread.MODID)
 public class BreadRegenerateHandler {
+    //开启配置文件的情况下, 执行生命提升（小幅）属性叠加和伤害吸收
     private static final Map<UUID, Integer> EAT_COUNT = new HashMap<>();
 
     @SubscribeEvent
@@ -45,7 +46,8 @@ public class BreadRegenerateHandler {
         int duration = -1;
         player.addEffect(new MobEffectInstance(BreadEffects.MINOR_HEALTH_BOOST.get(), duration, level));
 
-        if (player.getHealth() == player.getMaxHealth() && BreadConfigs.SERVER.healthBreadEnableAbsorption.get()) player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, BreadConfigs.SERVER.healthBreadAbsorptionMaxTime.get(), BreadConfigs.SERVER.healthBreadAbsorptionLevel.get()), player);
+        if (player.getHealth() == player.getMaxHealth() && BreadConfigs.SERVER.healthBreadEnableAbsorption.get())
+            player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, BreadConfigs.SERVER.healthBreadAbsorptionMaxTime.get(), BreadConfigs.SERVER.healthBreadAbsorptionLevel.get()), player);
         player.setHealth(player.getMaxHealth());
     }
 }

@@ -15,6 +15,7 @@ import java.util.List;
 
 @JeiPlugin
 public class JEIBreadPlugin implements IModPlugin {
+    //jei插件的注册
     private static final ResourceLocation PLUGIN_UID = ResourceLocation.fromNamespaceAndPath(UpgradedBread.MODID, "jei_plugin");
 
     @Override

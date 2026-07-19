@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
 public class KeLaBodyEffect extends MobEffect {
+    //金坷垃: 每秒为脚下方块施肥一次
     public KeLaBodyEffect(MobEffectCategory mobEffectCategory, int color) {
         super(mobEffectCategory, color);
     }
@@ -28,7 +29,8 @@ public class KeLaBodyEffect extends MobEffect {
                     }
                 }
             }
-        }    }
+        }
+    }
 
     @Override
     public boolean isDurationEffectTick(int pDuration, int pAmplifier) {

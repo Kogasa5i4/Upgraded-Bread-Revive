@@ -11,7 +11,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.UUID;
 
 public class MinorHealthBoostEffect extends MobEffect {
-    private static final UUID HEALTH_MOD_UUID = UUID.fromString("a1b2c3d4-e5f6-7890-abcd-ef1234567890");
+    //生命提升（小幅）: 效果比原版生命提升弱一些, 方便控制
+    private static final UUID HEALTH_MOD_UUID = UUID.fromString("a1b2c3d4-e5f6-7890-abcd-fe1234567890");
 
     public MinorHealthBoostEffect(MobEffectCategory category, int color) {
         super(category, color);

@@ -11,6 +11,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.UUID;
 
 public class UnovertakableEffect extends MobEffect {
+    //你跑不过我你信吗: 攻速移速各提升200%
+    //这是真跑不过, PVP大佬都没你快
     private static final UUID SPEED_MOD_UUID = UUID.fromString("a1b2c3d4-e5f6-7890-abcd-ef1234567890");
     private static final UUID ATTACK_SPEED_MOD_UUID = UUID.fromString("b2c3d4e5-f6a7-8901-bcde-f234567890ab");
 

@@ -10,8 +10,9 @@ import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModItemModelProvider extends ItemModelProvider {
-    public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+public class BreadItemModelProvider extends ItemModelProvider {
+    //物品模型
+    public BreadItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, UpgradedBread.MODID, existingFileHelper);
     }
 
@@ -63,7 +64,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         //food(new)--------------------------------------------------------------------------------------------->
         simpleItem(BreadItems.KE_LA_LONG_BREAD);
         simpleItem(BreadItems.LEES_WAFFLE);
-        simpleItem(BreadItems.CHOCLIZ_BREAD);
+        simpleItem(BreadItems.CHOCLIZ_LONG_BREAD);
         simpleItem(BreadItems.BAGUETTE_BAGUETTE);
         simpleItem(BreadItems.MICRO_SOFT_BREAD);
         simpleItem(BreadItems.MACRO_HARD_BREAD);

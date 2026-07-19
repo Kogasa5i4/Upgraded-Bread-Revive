@@ -11,8 +11,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;
 
-public class ModRecipeProvider extends RecipeProvider {
-    public ModRecipeProvider(PackOutput pOutput) {
+public class BreadRecipeProvider extends RecipeProvider {
+    //配方
+    public BreadRecipeProvider(PackOutput pOutput) {
         super(pOutput);
     }
 
@@ -478,13 +479,13 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_essence", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(BreadItems.CARBOHYDRATE_ESSENCE.get()).build()))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.FREEZING_LONG_BREAD.get(),1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.FREEZING_LONG_BREAD.get(), 1)
                 .define('B', BreadItems.FRESH_LONG_BREAD.get())
                 .define('E', BreadItems.FREEZING_ESSENCE.get())
                 .pattern("EEE")
                 .pattern("EBE")
                 .pattern("EEE")
-                .unlockedBy("has_freezing",inventoryTrigger(ItemPredicate.Builder.item()
+                .unlockedBy("has_freezing", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(BreadItems.FREEZING_ESSENCE.get()).build()))
                 .save(pWriter);
 
@@ -508,13 +509,13 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_essence", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(BreadItems.CARBOHYDRATE_ESSENCE.get()).build()))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.KE_LA_LONG_BREAD.get(),1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.KE_LA_LONG_BREAD.get(), 1)
                 .define('B', BreadItems.FRESH_LONG_BREAD.get())
                 .define('E', BreadItems.GROWTH_ESSENCE.get())
                 .pattern("EEE")
                 .pattern("EBE")
                 .pattern("EEE")
-                .unlockedBy("has_bone_meal",inventoryTrigger(ItemPredicate.Builder.item()
+                .unlockedBy("has_bone_meal", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(BreadItems.FREEZING_ESSENCE.get()).build()))
                 .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.TOTEM_GROUP.get(), 1)
@@ -536,13 +537,13 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_essence", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(BreadItems.CARBOHYDRATE_ESSENCE.get()).build()))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.LEES_WAFFLE.get(),1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.LEES_WAFFLE.get(), 1)
                 .define('B', BreadItems.FRESH_LONG_BREAD.get())
                 .define('E', BreadItems.LIFE_ESSENCE.get())
                 .pattern("EEE")
                 .pattern("EBE")
                 .pattern("EEE")
-                .unlockedBy("has_totem",inventoryTrigger(ItemPredicate.Builder.item()
+                .unlockedBy("has_totem", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(BreadItems.LEES_WAFFLE.get()).build()))
                 .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.COCOA_GROUP.get(), 1)
@@ -565,14 +566,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_essence", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(BreadItems.CARBOHYDRATE_ESSENCE.get()).build()))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.CHOCLIZ_BREAD.get(),1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.CHOCLIZ_LONG_BREAD.get(), 1)
                 .define('B', BreadItems.FRESH_LONG_BREAD.get())
                 .define('E', BreadItems.CHOCLIZ_ESSENCE.get())
                 .pattern("EEE")
                 .pattern("EBE")
                 .pattern("EEE")
-                .unlockedBy("has_chocliz",inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(BreadItems.CHOCLIZ_BREAD.get()).build()))
+                .unlockedBy("has_chocliz", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(BreadItems.CHOCLIZ_LONG_BREAD.get()).build()))
                 .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.BAGUETTE_BAGUETTE.get(), 1)
                 .define('#', BreadItems.FRESH_LONG_BREAD.get())
@@ -626,7 +627,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 RecipeCategory.MISC,
                 BreadItems.CARBOHYDRATE_INGOT.get(),
                 RecipeCategory.MISC,
-                BreadBlocks.CARBOHYDRATE_BLOCK.get().asItem());
+                BreadBlocks.CARBOHYDRATE_BLOCK_ITEM.get());
 
         //SimpleCook-------------------------------------------------------------------------------->
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(BreadItems.HARDER_BREAD.get()),

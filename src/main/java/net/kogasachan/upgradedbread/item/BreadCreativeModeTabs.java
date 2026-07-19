@@ -12,9 +12,10 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 public class BreadCreativeModeTabs {
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, UpgradedBread.MODID);
+    //DeferredRegister: 延迟注册器, 正式注册物品, 创造模式标签页, 方块, 药水效果等的必须前置
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, UpgradedBread.MODID);
 
+    //把物品加入物品栏
     public static final RegistryObject<CreativeModeTab> BREAD_TAB = CREATIVE_MODE_TABS.register("bread_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(BreadItems.FRESH_LONG_BREAD.get()))
                     .title(Component.translatable("item_group.upgradedbread.upgradedbreadtab"))
@@ -66,7 +67,7 @@ public class BreadCreativeModeTabs {
                         //food(new)--------------------------------------------------------------------------------------------->
                         pOutput.accept(BreadItems.KE_LA_LONG_BREAD.get());
                         pOutput.accept(BreadItems.LEES_WAFFLE.get());
-                        pOutput.accept(BreadItems.CHOCLIZ_BREAD.get());
+                        pOutput.accept(BreadItems.CHOCLIZ_LONG_BREAD.get());
                         pOutput.accept(BreadItems.BAGUETTE_BAGUETTE.get());
                         pOutput.accept(BreadItems.MICRO_SOFT_BREAD.get());
                         pOutput.accept(BreadItems.MACRO_HARD_BREAD.get());

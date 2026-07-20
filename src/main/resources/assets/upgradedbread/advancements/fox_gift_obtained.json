@@ -1,0 +1,37 @@
+{
+  "parent": "minecraft:husbandry/bred_all_animals",
+  "display": {
+    "icon": {
+      "item": "upgradedbread:fox_gift_long_bread"
+    },
+    "title": {
+      "translate": "advancement.upgradedbread.fox_gift.title"
+    },
+    "description": {
+      "translate": "advancement.upgradedbread.fox_gift.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "obtain_fox_gift": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "upgradedbread:fox_gift_long_bread"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": {
+      "levels": 5
+    }
+  }
+}

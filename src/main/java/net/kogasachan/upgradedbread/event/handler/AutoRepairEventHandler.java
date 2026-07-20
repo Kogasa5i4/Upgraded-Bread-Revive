@@ -2,6 +2,7 @@ package net.kogasachan.upgradedbread.event.handler;
 
 import net.kogasachan.upgradedbread.UpgradedBread;
 import net.kogasachan.upgradedbread.effect.BreadEffects;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -9,17 +10,47 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 @Mod.EventBusSubscriber(modid = UpgradedBread.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class AutoRepairEventHandler {
+    // 消耗一定经验对装备进行自动修补
     //每点经验修复的耐久值 (与原版 Mending 一致)
     private static final int DURABILITY_PER_EXP = 2;
+    // 基础修复间隔 (tick)
+    private static final int BASE_INTERVAL = 20;
+
+    // 存储每个玩家的 tick 计数器
+    private static final Map<UUID, Integer> TICK_COUNTER = new HashMap<>();
 
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase != TickEvent.Phase.END) return;
         Player player = event.player;
         if (player.level().isClientSide()) return;
-        if (!player.hasEffect(BreadEffects.AUTO_REPAIR.get())) return;
+
+        // 检查是否拥有效果
+        MobEffectInstance effect = player.getEffect(BreadEffects.AUTO_REPAIR.get());
+        if (effect == null) {
+            // 效果不存在时清理计数器
+            TICK_COUNTER.remove(player.getUUID());
+            return;
+        }
+
+        int amplifier = effect.getAmplifier(); // 等级
+        // 修复间隔 = 基础间隔 / (等级 + 1), 至少为 1
+        int interval = Math.max(1, BASE_INTERVAL / (amplifier + 1));
+
+        UUID uuid = player.getUUID();
+        int count = TICK_COUNTER.getOrDefault(uuid, 0) + 1;
+        if (count < interval) {
+            TICK_COUNTER.put(uuid, count);
+            return;
+        }
+        // 达到间隔, 执行修复
+        TICK_COUNTER.put(uuid, 0); // 重置计数器
 
         // 获取当前总经验值
         int totalExp = player.totalExperience;
@@ -43,6 +74,7 @@ public class AutoRepairEventHandler {
 
             // 扣除经验
             player.giveExperiencePoints(-useExp);
+
             // 修复物品
             int repairAmount = useExp * DURABILITY_PER_EXP;
             int newDamage = Math.max(0, stack.getDamageValue() - repairAmount);

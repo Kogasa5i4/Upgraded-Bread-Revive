@@ -17,7 +17,7 @@ import java.util.UUID;
 @Mod.EventBusSubscriber(modid = UpgradedBread.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class AutoRepairEventHandler {
     // 消耗一定经验对装备进行自动修补
-    //每点经验修复的耐久值 (与原版 Mending 一致)
+    //每点经验修复的耐久值 (与原版经验修补一致)
     private static final int DURABILITY_PER_EXP = 2;
     // 基础修复间隔 (tick)
     private static final int BASE_INTERVAL = 20;

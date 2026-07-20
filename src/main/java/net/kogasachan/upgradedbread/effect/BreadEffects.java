@@ -29,9 +29,57 @@ public class BreadEffects {
     public static final RegistryObject<MobEffect> MINOR_HEALTH_BOOST =
             MOB_EFFECTS.register("minor_health_boost",
                     () -> new MinorHealthBoostEffect(MobEffectCategory.BENEFICIAL, 0xFFAA00));
+    //滋养: 削弱版
     public static final RegistryObject<MobEffect> GUARANTEED_FULLNESS =
             MOB_EFFECTS.register("guaranteed_fullness",
                     () -> new GuaranteedFullnessEffect(MobEffectCategory.BENEFICIAL, 0xFFD700));
+
+    //以下为测试用
+    //生命回溯: 削弱版
+    public static final RegistryObject<MobEffect> TIME_REVERSE =
+            MOB_EFFECTS.register("time_reverse",
+                    () -> new MobEffect(MobEffectCategory.BENEFICIAL, 0x00FFCC) {
+                        @Override
+                        public boolean isDurationEffectTick(int duration, int amplifier) {
+                            return true;
+                        }
+                    });
+    //饱腹代偿: 削弱版
+    public static final RegistryObject<MobEffect> FOOD_SHIELD =
+            MOB_EFFECTS.register("food_shield",
+                    () -> new MobEffect(MobEffectCategory.BENEFICIAL, 0xFFAA00) {
+                        @Override
+                        public boolean isDurationEffectTick(int duration, int amplifier) {
+                            return true;
+                        }
+                    });
+    //!?经验汲取?!
+    public static final RegistryObject<MobEffect> EXPERIENCE_BOOST =
+            MOB_EFFECTS.register("experience_boost",
+                    () -> new MobEffect(MobEffectCategory.BENEFICIAL, 0x55FF55) {
+                        @Override
+                        public boolean isDurationEffectTick(int duration, int amplifier) {
+                            return false;
+                        }
+                    });
+    //自动修补
+    public static final RegistryObject<MobEffect> AUTO_REPAIR =
+            MOB_EFFECTS.register("auto_repair",
+                    () -> new MobEffect(MobEffectCategory.BENEFICIAL, 0xFFAA00) {
+                        @Override
+                        public boolean isDurationEffectTick(int duration, int amplifier) {
+                            return true;
+                        }
+                    });
+    //经验护盾
+    public static final RegistryObject<MobEffect> EXPERIENCE_SHIELD =
+            MOB_EFFECTS.register("experience_shield",
+                    () -> new MobEffect(MobEffectCategory.BENEFICIAL, 0x00AAFF) {
+                        @Override
+                        public boolean isDurationEffectTick(int duration, int amplifier) {
+                            return false;
+                        }
+                    });
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);

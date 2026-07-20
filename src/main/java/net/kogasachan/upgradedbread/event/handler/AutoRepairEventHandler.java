@@ -59,8 +59,8 @@ public class AutoRepairEventHandler {
         // 遍历所有装备槽位 (主手, 副手, 头盔, 胸甲, 腿甲, 靴子)
         for (EquipmentSlot slot : EquipmentSlot.values()) {
             ItemStack stack = player.getItemBySlot(slot);
-            if (stack.isEmpty()) continue;
-            if (!stack.isDamageableItem()) continue;
+            if (stack.isEmpty()) continue; // 未装备物品
+            if (!stack.isDamageableItem()) continue; // 不可修复
             if (stack.getDamageValue() == 0) continue; // 已满耐久
 
             // 计算修复所需经验 (每 DURABILITY_PER_EXP 经验修复 1 点耐久)

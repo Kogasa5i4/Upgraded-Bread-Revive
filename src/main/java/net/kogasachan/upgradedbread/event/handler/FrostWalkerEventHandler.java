@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.FrostedIceBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 
-public class FrostWalkerHandler {
+public class FrostWalkerEventHandler {
     //来自原版冰霜行者附魔的代码
     public static void onEntityMoved(LivingEntity pLiving, Level pLevel, BlockPos pPos, int pLevelConflicting) {
         if (pLiving.onGround() && !pLiving.isInWater()) {

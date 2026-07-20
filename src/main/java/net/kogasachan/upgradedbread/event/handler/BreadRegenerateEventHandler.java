@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @Mod.EventBusSubscriber(modid = UpgradedBread.MODID)
-public class BreadRegenerateHandler {
+public class BreadRegenerateEventHandler {
     //开启配置文件的情况下, 执行生命提升（小幅）属性叠加和伤害吸收
     private static final Map<UUID, Integer> EAT_COUNT = new HashMap<>();
 

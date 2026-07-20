@@ -66,14 +66,14 @@ public class UnovertakableEvent {
         int eatCount = EAT_COUNT.getOrDefault(playerId, 0) + 1;
         EAT_COUNT.put(playerId, eatCount);
 
-        //吃太多概率给予巨大惩罚, 防止玩家试图无限续杯来逃课
+        //吃太多概率给予巨大惩罚, 一定程度上防止玩家试图无限续杯来逃课
         if (eatCount >= 3) {
             EAT_COUNT.put(playerId, 0);
             player.setHealth(0.01f);
             return;
         }
 
-        //按配置文件决定吃完巧乐兹后玩家立刻死亡的概率
+        //按配置文件决定吃完巧乐兹后玩家因药水效果结束而死亡的概率
         //你一句别怂, 我就敢往前冲~
         double chance = BreadConfigs.SERVER.penaltyDeathChance.get();
         if (player.getRandom().nextFloat() < chance) {

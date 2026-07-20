@@ -1,6 +1,6 @@
 package net.kogasachan.upgradedbread.effect;
 
-import net.kogasachan.upgradedbread.event.handler.FrostWalkerHandler;
+import net.kogasachan.upgradedbread.event.handler.FrostWalkerEventHandler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -17,7 +17,7 @@ public class FreezingBodyEffect extends MobEffect {
 
     //来自原版冰霜行者附魔的代码, 已注册为单独的类方便调用
     public static void onEntityMoved(LivingEntity pLiving, Level pLevel, BlockPos pPos, int pLevelConflicting) {
-        FrostWalkerHandler.onEntityMoved(pLiving, pLevel, pPos, pLevelConflicting);
+        FrostWalkerEventHandler.onEntityMoved(pLiving, pLevel, pPos, pLevelConflicting);
     }
 
     @Override

@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.Random;
 
 @Mod.EventBusSubscriber(modid = UpgradedBread.MODID, value = Dist.CLIENT)
-public class FreezingAttackHandler {
+public class FreezingAttackEventHandler {
     //玩家拥有完美冻结时攻击触发, 虽然能冻住敌人, 但是也有可能会冻住自己(果然是baka)
     @SubscribeEvent
     public static void FreezeAttack(AttackEntityEvent event) {

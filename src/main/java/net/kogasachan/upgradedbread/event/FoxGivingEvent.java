@@ -17,7 +17,10 @@ public class FoxGivingEvent {
         Player player = event.getCausedByPlayer();
         if (player == null) return;
 
-        // 给玩家一个狐赐长棍 (顾名思义嘛)
-        player.getInventory().add(new ItemStack(BreadItems.FOX_GIFT_LONG_BREAD.get(), 1));
+        // 1% 概率获得物品 (使用幼崽的随机源)
+        if (event.getChild().getRandom().nextFloat() < 0.01f) {
+            // 给玩家一个狐赐长棍 (顾名思义嘛)
+            player.getInventory().add(new ItemStack(BreadItems.FOX_GIFT_LONG_BREAD.get(), 1));
+        }
     }
 }

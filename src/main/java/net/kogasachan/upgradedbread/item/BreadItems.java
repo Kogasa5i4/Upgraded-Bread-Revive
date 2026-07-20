@@ -18,11 +18,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class BreadItems {
-    //DeferredRegister: 延迟注册器, 正式注册物品, 创造模式标签页, 方块, 药水效果等的必须前置
+    // DeferredRegister: 延迟注册器, 正式注册物品, 创造模式标签页, 方块, 药水效果等的必须前置
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, UpgradedBread.MODID);
 
-    //物品注册, 食物属性和工具提示已一并整合
-    //essence----------------------------------------------------------------------------------------------->
+    // 物品注册, 食物属性和工具提示已一并整合
+    // essence
     public static final RegistryObject<Item> HARD_BREAD = ITEMS.register("hard_bread",
             () -> new Item(new Item.Properties()) {
                 @Override
@@ -168,7 +168,7 @@ public class BreadItems {
                 }
             });
 
-    //essence(new)------------------------------------------------------------------------------------------>
+    // essence (new)
     public static final RegistryObject<Item> GROWTH_ESSENCE = ITEMS.register("growth_essence",
             () -> new SimpleFoiledItem(new Item.Properties().rarity(Rarity.EPIC)) {
                 @Override
@@ -194,7 +194,7 @@ public class BreadItems {
                 }
             });
 
-    //food-------------------------------------------------------------------------------------------------->
+    // food
     public static final RegistryObject<Item> FRESH_LONG_BREAD = ITEMS.register("fresh_long_bread",
             () -> new Item(new Item.Properties().stacksTo(16).
                     food((new FoodProperties.Builder()).nutrition(15).saturationMod(0.4F).build())) {
@@ -367,7 +367,7 @@ public class BreadItems {
                 }
             });
 
-    //food(new)--------------------------------------------------------------------------------------------->
+    // food (new)
     public static final RegistryObject<Item> KE_LA_LONG_BREAD =
             ITEMS.register("ke_la_long_bread",
                     () -> new SimpleFoiledItem(new Item.Properties().stacksTo(16).rarity(Rarity.RARE).food(new FoodProperties.Builder()
@@ -428,8 +428,9 @@ public class BreadItems {
                         }
                     });
     public static final RegistryObject<Item> MICRO_SOFT_BREAD = ITEMS.register("micro_soft_bread",
-            () -> new Item(new Item.Properties().stacksTo(64).
-                    food((new FoodProperties.Builder()).nutrition(1).saturationMod(0.2F).build())) {
+            () -> new Item(new Item.Properties().stacksTo(64).food((new FoodProperties.Builder())
+                    .nutrition(1).saturationMod(0.2F)
+                    .effect(() -> new MobEffectInstance(BreadEffects.FOOD_SHIELD.get(), 10, 0), 0.25f).build())) {
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
                     super.appendHoverText(itemStack, level, tooltip, flag);
@@ -438,8 +439,9 @@ public class BreadItems {
                 }
             });
     public static final RegistryObject<Item> MACRO_HARD_BREAD = ITEMS.register("macro_hard_bread",
-            () -> new Item(new Item.Properties().stacksTo(16).
-                    food((new FoodProperties.Builder()).nutrition(24).saturationMod(0.8F).build())) {
+            () -> new Item(new Item.Properties().stacksTo(16).food((new FoodProperties.Builder())
+                    .nutrition(24).saturationMod(0.8F)
+                    .effect(() -> new MobEffectInstance(BreadEffects.FOOD_SHIELD.get(), 300, 0), 0.75f).build())) {
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
                     super.appendHoverText(itemStack, level, tooltip, flag);
@@ -447,8 +449,18 @@ public class BreadItems {
                     tooltip.add(Component.translatable("tooltip.upgradedbread.support.astral_hikari"));
                 }
             });
+    public static final RegistryObject<Item> FOX_GIFT_LONG_BREAD = ITEMS.register("fox_give_long_bread",
+            () -> new SimpleFoiledItem(new Item.Properties().fireResistant().stacksTo(64).rarity(Rarity.EPIC).food((new FoodProperties.Builder()).alwaysEat().fast()
+                    .nutrition(3).saturationMod(0.8F).build())) {
+                @Override
+                public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
+                    super.appendHoverText(itemStack, level, tooltip, flag);
+                    tooltip.add(Component.translatable("tooltip.upgradedbread.fox_give_long_bread.tooltip"));
+                    tooltip.add(Component.translatable("tooltip.upgradedbread.support.tincyclopedia"));
+                }
+            });
 
-    //material---------------------------------------------------------------------------------------------->
+    // material
     public static final RegistryObject<Item> SUGAR_GROUP = ITEMS.register("sugar_group",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BLAZE_GROUP = ITEMS.register("blaze_group",
@@ -480,7 +492,7 @@ public class BreadItems {
     public static final RegistryObject<Item> FREEZING_GROUP = ITEMS.register("freezing_group",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
 
-    //material(new)------------------------------------------------------------------------------------------->
+    // material (new)
     public static final RegistryObject<Item> BONE_MEAL_GROUP = ITEMS.register("bone_meal_group",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> TOTEM_GROUP = ITEMS.register("totem_group",
@@ -488,7 +500,7 @@ public class BreadItems {
     public static final RegistryObject<Item> COCOA_GROUP = ITEMS.register("cocoa_group",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
 
-    //product------------------------------------------------------------------------------------------------->
+    // product
     public static final RegistryObject<Item> HEART_OF_THE_COAL = ITEMS.register("heart_of_the_coal",
             () -> new Item(new Item.Properties()) {
                 @Override

@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class BreadItemTagGenerator extends ItemTagsProvider {
-    //物品标签
+    // 物品标签
     public BreadItemTagGenerator(@NotNull PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, CompletableFuture<TagsProvider.TagLookup<Block>> pBlockTags, @Nullable net.minecraftforge.common.data.ExistingFileHelper existingFileHelper) {
         super(pOutput, pLookupProvider, pBlockTags, UpgradedBread.MODID, existingFileHelper);
     }

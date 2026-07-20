@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 
 public class BreadLootTableProvider {
-    //战利品表
+    // 战利品表
     public static LootTableProvider create(PackOutput output) {
         return new LootTableProvider(output, Set.of(), List.of(
                 new LootTableProvider.SubProviderEntry(BreadBlockLootTables::new, LootContextParamSets.BLOCK)

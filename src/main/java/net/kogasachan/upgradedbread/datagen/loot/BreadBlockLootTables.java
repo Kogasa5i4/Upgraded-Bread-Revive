@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 
 public class BreadBlockLootTables extends BlockLootSubProvider {
-    //提供战利品表
+    // 提供战利品表
     public BreadBlockLootTables() {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }

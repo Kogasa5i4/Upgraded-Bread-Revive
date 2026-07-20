@@ -76,6 +76,7 @@
   "item.upgradedbread.baguette_baguette": "法棍法棍",
   "item.upgradedbread.micro_soft_bread": "微软面包",
   "item.upgradedbread.macro_hard_bread": "巨硬面包",
+  "item.upgradedbread.fox_give_long_bread": "狐赐长棍",
   "item_group.upgradedbread.upgradedbreadtab": "面包增强",
   "jei.category.upgradedbread.bread_refresh": "蘸水",
   "tooltip.upgradedbread.carbohydrate_block.tooltip": "§7踩上去有惊喜§r",
@@ -119,6 +120,7 @@
   "tooltip.upgradedbread.baguette_baguette.tale2": "§9！？棍法法棍？！§r",
   "tooltip.upgradedbread.micro_soft_bread.tooltip": "§7小小的也很可爱§r",
   "tooltip.upgradedbread.macro_hard_bread.tooltip": "§7更大！更硬！更强！§r",
+  "tooltip.upgradedbread.fox_give_long_bread.tooltip": "§7要来一口吗？§r",
   "tooltip.upgradedbread.support.marshall": "§a创意由 §lMarshall§a 提供§r",
   "tooltip.upgradedbread.support.tincyclopedia": "§3创意由 §lTincyclopedia§3 提供§r",
   "tooltip.upgradedbread.support.astral_hikari": "§9创意由 §lAstral Hikari§9 提供§r"

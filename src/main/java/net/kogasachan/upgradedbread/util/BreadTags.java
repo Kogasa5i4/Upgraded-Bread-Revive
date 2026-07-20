@@ -9,19 +9,19 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public class BreadTags {
-    //模组标签注册
+    // 模组标签注册
     public static class Blocks {
-        //方块标签注册
+        // 方块标签注册
         public static final TagKey<Block> DROPS_LOST_ENERGY_CORE = tag("drops_lost_energy_core");
 
-        //方块标签添加
+        // 方块标签添加
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(UpgradedBread.MODID, name));
         }
     }
 
     public static class Items {
-        //物品标签注册
+        // 物品标签注册
         public static final TagKey<Item> GROUPS = tag("groups");
         public static final TagKey<Item> POTION_GROUPS = tag("potion_groups");
         public static final TagKey<Item> SPECIAL_GROUPS = tag("special_groups");
@@ -34,7 +34,7 @@ public class BreadTags {
         public static final TagKey<Item> SPECIAL_FOODS = tag("special_foods");
         public static final TagKey<Item> ENERGY_CORES = tag("energy_cores");
 
-        //物品标签添加
+        // 物品标签添加
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(UpgradedBread.MODID, name));
         }

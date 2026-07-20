@@ -76,6 +76,7 @@
   "item.upgradedbread.baguette_baguette": "Baguette Baguette",
   "item.upgradedbread.micro_soft_bread": "Micro Soft Bread",
   "item.upgradedbread.macro_hard_bread": "Macro Hard Bread",
+  "item.upgradedbread.fox_give_long_bread": "Fox Give Long Bread",
   "item_group.upgradedbread.upgradedbreadtab": "Upgraded Bread",
   "jei.category.upgradedbread.bread_refresh": "Bread Refresh",
   "tooltip.upgradedbread.carbohydrate_block.tooltip": "§7Stepping on it brings surprises§r",
@@ -119,6 +120,7 @@
   "tooltip.upgradedbread.baguette_baguette.tale2": "§9!?etteugaB Baguette?!§r",
   "tooltip.upgradedbread.micro_soft_bread.tooltip": "§7Small and adorable§r",
   "tooltip.upgradedbread.macro_hard_bread.tooltip": "§7Faster, Higher, Stronger!§r",
+  "tooltip.upgradedbread.fox_give_long_bread.tooltip": "§7Would you like to taste it?§r",
   "tooltip.upgradedbread.support.marshall": "§aConcept by §lMarshall§a§r",
   "tooltip.upgradedbread.support.tincyclopedia": "§3Concept by §lTincyclopedia§3§r",
   "tooltip.upgradedbread.support.astral_hikari": "§9Concept by §lAstral Hikari§9§r"

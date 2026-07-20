@@ -31,20 +31,20 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class BreadBlocks {
-    //DeferredRegister: 延迟注册器, 正式注册物品, 创造模式标签页, 方块, 药水效果等的必须前置
+    // DeferredRegister: 延迟注册器, 正式注册物品, 创造模式标签页, 方块, 药水效果等的必须前置
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, UpgradedBread.MODID);
 
-    //方块(世界中的方块)注册
+    // 方块 (世界中的方块) 注册
     public static final RegistryObject<Block> CARBOHYDRATE_BLOCK = BLOCKS.register("carbohydrate_block",
-            //此处也可以使用BlockBehaviour.Properties.of()代替BlockBehaviour.Properties.copy()进行自定义
+            // 此处也可以使用 BlockBehaviour.Properties.of() 代替 BlockBehaviour.Properties.copy() 进行自定义
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.HAY_BLOCK)
                     //定义方块的独特属性(若此处未定义，则按被copy的方块属性(如果用的是of, 应为铁块))
                     .sound(SoundType.GRASS)
                     .mapColor(MapColor.COLOR_YELLOW)
                     .instrument(NoteBlockInstrument.CREEPER)
                     .strength(0.5F)) {
-                //覆写父类stepOn函数, 实现踩在方块上概率获取物品和药水效果
-                //用event也能实现, 但是若使用playerTickEvent或livingEntityTickEvent, 对性能开销较大
+                // 覆写父类 stepOn() 方法, 实现踩在方块上概率获取物品和药水效果
+                // 用 event 也能实现, 但是若使用 playerTickEvent 或 livingEntityTickEvent, 对性能开销较大
                 @Override
                 public void stepOn(@NotNull Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull Entity entity) {
                     if (!level.isClientSide && entity instanceof Player player) {
@@ -60,7 +60,7 @@ public class BreadBlocks {
                 }
             });
 
-    //方块物品(手持时和物品栏里的方块)注册
+    // 方块物品 (手持时和物品栏里的方块) 注册
     public static final RegistryObject<BlockItem> CARBOHYDRATE_BLOCK_ITEM = BreadItems.ITEMS.register("carbohydrate_block", () -> new BlockItem(CARBOHYDRATE_BLOCK.get(), new Item.Properties()) {
         @Override
         public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level,
@@ -70,7 +70,7 @@ public class BreadBlocks {
         }
     });
 
-    //注册方块注册的事件总线
+    // 注册方块注册的事件总线
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }

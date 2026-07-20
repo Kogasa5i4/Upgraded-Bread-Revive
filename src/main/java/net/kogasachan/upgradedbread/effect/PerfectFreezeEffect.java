@@ -5,8 +5,8 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 
 public class PerfectFreezeEffect extends MobEffect {
-    //完美冻结: 定住, 不许动!
-    //部分效果实现在event.handler软件包下
+    // 完美冻结: 定住, 不许动!
+    // 部分效果实现在event.handler软件包下
     public PerfectFreezeEffect(MobEffectCategory mobEffectCategory, int color) {
         super(mobEffectCategory, color);
     }

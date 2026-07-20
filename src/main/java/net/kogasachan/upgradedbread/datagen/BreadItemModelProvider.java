@@ -11,14 +11,14 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
 public class BreadItemModelProvider extends ItemModelProvider {
-    //物品模型
+    // 物品模型
     public BreadItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, UpgradedBread.MODID, existingFileHelper);
     }
 
     @Override
     protected void registerModels() {
-        //essence----------------------------------------------------------------------------------------------->
+        // essence
         simpleItem(BreadItems.HARD_BREAD);
         simpleItem(BreadItems.HARDER_BREAD);
         essenceItem(BreadItems.CARBOHYDRATE_ESSENCE);
@@ -38,12 +38,12 @@ public class BreadItemModelProvider extends ItemModelProvider {
         essenceItem(BreadItems.FREEZING_ESSENCE);
         simpleItem(BreadItems.CARBOHYDRATE_INGOT);
 
-        //essence(new)------------------------------------------------------------------------------------------>
+        // essence (new)
         essenceItem(BreadItems.GROWTH_ESSENCE);
         essenceItem(BreadItems.LIFE_ESSENCE);
         essenceItem(BreadItems.CHOCLIZ_ESSENCE);
 
-        //food-------------------------------------------------------------------------------------------------->
+        // food
         simpleItem(BreadItems.FRESH_LONG_BREAD);
         simpleItem(BreadItems.DRY_LONG_BREAD);
         simpleItem(BreadItems.STRENGTH_LONG_BREAD);
@@ -61,15 +61,16 @@ public class BreadItemModelProvider extends ItemModelProvider {
         simpleItem(BreadItems.FISHING_LONG_BREAD);
         simpleItem(BreadItems.FREEZING_LONG_BREAD);
 
-        //food(new)--------------------------------------------------------------------------------------------->
+        // food (new)
         simpleItem(BreadItems.KE_LA_LONG_BREAD);
         simpleItem(BreadItems.LEES_WAFFLE);
         simpleItem(BreadItems.CHOCLIZ_LONG_BREAD);
         simpleItem(BreadItems.BAGUETTE_BAGUETTE);
         simpleItem(BreadItems.MICRO_SOFT_BREAD);
         simpleItem(BreadItems.MACRO_HARD_BREAD);
+        simpleItem(BreadItems.FOX_GIFT_LONG_BREAD);
 
-        //material---------------------------------------------------------------------------------------------->
+        // material
         simpleItem(BreadItems.SUGAR_GROUP);
         simpleItem(BreadItems.BLAZE_GROUP);
         simpleItem(BreadItems.FOOT_GROUP);
@@ -86,12 +87,12 @@ public class BreadItemModelProvider extends ItemModelProvider {
         simpleItem(BreadItems.FISHING_GROUP);
         simpleItem(BreadItems.FREEZING_GROUP);
 
-        //material(new)------------------------------------------------------------------------------------------->
+        // material (new)
         simpleItem(BreadItems.BONE_MEAL_GROUP);
         simpleItem(BreadItems.TOTEM_GROUP);
         simpleItem(BreadItems.COCOA_GROUP);
 
-        //product----------------------------------------------------------------------------------------------->
+        // product
         simpleItem(BreadItems.HEART_OF_THE_COAL);
         simpleItem(BreadItems.LOST_ENERGY_CORE);
         simpleItem(BreadItems.LOW_ENERGY_CORE);

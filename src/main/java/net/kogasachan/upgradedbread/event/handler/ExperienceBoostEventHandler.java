@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = UpgradedBread.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ExperienceBoostEventHandler {
-
+    // 当且仅当玩家获得经验 (original > 0) 时生效
     @SubscribeEvent
     public static void onXpChange(PlayerXpEvent.XpChange event) {
         Player player = event.getEntity();

@@ -4,8 +4,8 @@ import net.minecraftforge.common.ForgeConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
 
 public class BreadConfigs {
-    //配置文件的注册
-    //类型: 服务端配置文件
+    // 配置文件的注册
+    // 类型: 服务端配置文件
     public static final ServerConfig SERVER;
     public static final ForgeConfigSpec SERVER_SPEC;
 

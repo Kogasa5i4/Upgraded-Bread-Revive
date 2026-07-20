@@ -10,10 +10,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 
 public class FrostWalkerEventHandler {
-    //来自原版冰霜行者附魔的代码
+    // 来自原版冰霜行者附魔的代码
     public static void onEntityMoved(LivingEntity pLiving, Level pLevel, BlockPos pPos, int pLevelConflicting) {
         if (pLiving.onGround() && !pLiving.isInWater()) {
-            //新增!pLiving.isInWater()是为了防止在岸边1格深的水中前进并上浮时触发效果(所以这个bug到底是怎么发现的)
+            // 新增 !pLiving.isInWater() 是为了防止在岸边 1 格深的水中前进并上浮时触发效果 (所以这个bug到底是怎么发现的)
             BlockState blockstate = Blocks.FROSTED_ICE.defaultBlockState();
             int i = Math.min(16, 2 + pLevelConflicting);
             BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
@@ -21,8 +21,9 @@ public class FrostWalkerEventHandler {
             int dy;
             if (pLiving.getY() % 1 != 0) dy = 0;
             else dy = -1;
-            //新增dy的判别防止因为不完整方块无法生效
-            //但是也会导致在活板门等方块上方时玩家冻结周围的水, 还得跳一下才能走上去(baka修复了一个bug, 但是baka过拟合了)
+            // 新增 dy 的判别防止因为不完整方块无法生效
+            // 但是也会导致在活板门等方块上方时玩家冻结周围的水, 还得跳一下才能走上去
+            // baka 修复了一个 bug , 但是 baka 过拟合了 (笑)
 
             for (BlockPos blockpos : BlockPos.betweenClosed(pPos.offset(-i, dy, -i), pPos.offset(i, dy, i))) {
                 if (blockpos.closerToCenterThan(pLiving.position(), i)) {

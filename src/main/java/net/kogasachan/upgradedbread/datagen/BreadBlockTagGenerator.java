@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class BreadBlockTagGenerator extends BlockTagsProvider {
-    //方块标签
+    // 方块标签
     public BreadBlockTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, UpgradedBread.MODID, existingFileHelper);
     }

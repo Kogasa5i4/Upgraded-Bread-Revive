@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Consumer;
 
 public class BreadRecipeProvider extends RecipeProvider {
-    //配方
+    // 配方
     public BreadRecipeProvider(PackOutput pOutput) {
         super(pOutput);
     }
@@ -24,7 +24,7 @@ public class BreadRecipeProvider extends RecipeProvider {
         final String CAMP_TAIL = "_from_campfire_cooking";
         final String ESSENCE_TAIL = "_from_essence";
 
-        //Shaped------------------------------------------------------------------------------------>
+        // Shaped
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.BLAZE_GROUP.get(), 3)
                 .define('M', Items.BLAZE_POWDER)
                 .define('N', Items.NETHER_WART)
@@ -489,7 +489,7 @@ public class BreadRecipeProvider extends RecipeProvider {
                         .of(BreadItems.FREEZING_ESSENCE.get()).build()))
                 .save(pWriter);
 
-        //Shaped(new)------------------------------------------------------------------------------->
+        // Shaped (new)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BreadItems.BONE_MEAL_GROUP.get(), 1)
                 .define('A', Items.BONE_MEAL)
                 .define('N', Items.DIRT)
@@ -598,7 +598,7 @@ public class BreadRecipeProvider extends RecipeProvider {
                         .of(BreadItems.FRESH_LONG_BREAD.get()).build()))
                 .save(pWriter);
 
-        //Shapeless--------------------------------------------------------------------------------->
+        // Shapeless
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BREAD, 3)
                 .requires(BreadItems.FRESH_LONG_BREAD.get())
                 .unlockedBy("has_long_bread", inventoryTrigger(ItemPredicate.Builder.item()
@@ -610,7 +610,7 @@ public class BreadRecipeProvider extends RecipeProvider {
                         .of(BreadItems.LOST_ENERGY_CORE.get()).build()))
                 .save(pWriter);
 
-        //Shapeless(new)---------------------------------------------------------------------------->
+        // Shapeless (new)
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, BreadItems.MICRO_SOFT_BREAD.get(), 4)
                 .requires(Items.BREAD)
                 .unlockedBy("has_bread", inventoryTrigger(ItemPredicate.Builder.item()
@@ -622,14 +622,14 @@ public class BreadRecipeProvider extends RecipeProvider {
                         .of(BreadItems.FRESH_LONG_BREAD.get()).build()))
                 .save(pWriter, "fresh_long_bread_from_macro_hard_bread");
 
-        //nineBlockStorage-------------------------------------------------------------------------->
+        // nineBlockStorage
         nineBlockStorageRecipes(pWriter,
                 RecipeCategory.MISC,
                 BreadItems.CARBOHYDRATE_INGOT.get(),
                 RecipeCategory.MISC,
                 BreadBlocks.CARBOHYDRATE_BLOCK_ITEM.get());
 
-        //SimpleCook-------------------------------------------------------------------------------->
+        // SimpleCook
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(BreadItems.HARDER_BREAD.get()),
                         RecipeCategory.MISC,
                         BreadItems.CARBOHYDRATE_ESSENCE.get(), 1.0F, 200)
@@ -648,7 +648,7 @@ public class BreadRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_harder_bread", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(BreadItems.HARDER_BREAD.get()).build()))
                 .save(pWriter, getItemName(BreadItems.CARBOHYDRATE_ESSENCE.get()) + CAMP_TAIL);
-        //********************************************************************************************
+
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(BreadItems.FRESH_LONG_BREAD.get()),
                         RecipeCategory.MISC,
                         BreadItems.DRY_LONG_BREAD.get(), 1.05F, 200)
@@ -667,7 +667,7 @@ public class BreadRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_fresh_long_bread", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(BreadItems.FRESH_LONG_BREAD.get()).build()))
                 .save(pWriter, getItemName(BreadItems.DRY_LONG_BREAD.get()) + CAMP_TAIL);
-        //********************************************************************************************
+
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(BreadItems.HEART_OF_THE_COAL.get()),
                         RecipeCategory.MISC,
                         BreadItems.LOW_ENERGY_CORE.get(), 0.5F, 200)

@@ -9,13 +9,13 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class FreezingBodyEffect extends MobEffect {
-    //*操控冷气程度的能力: 效果相当于冰霜行者附魔, 但是有所改进
-    //部分效果实现在event.handler软件包下
+    // *操控冷气程度的能力: 效果相当于冰霜行者附魔, 但是有所改进
+    // 部分效果实现在event.handler软件包下
     public FreezingBodyEffect(MobEffectCategory mobEffectCategory, int color) {
         super(mobEffectCategory, color);
     }
 
-    //来自原版冰霜行者附魔的代码, 已注册为单独的类方便调用
+    // 来自原版冰霜行者附魔的代码, 已注册为单独的类方便调用
     public static void onEntityMoved(LivingEntity pLiving, Level pLevel, BlockPos pPos, int pLevelConflicting) {
         FrostWalkerEventHandler.onEntityMoved(pLiving, pLevel, pPos, pLevelConflicting);
     }

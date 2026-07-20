@@ -1,7 +1,8 @@
-package net.kogasachan.upgradedbread.item;
+package net.kogasachan.upgradedbread.item.tab;
 
 import net.kogasachan.upgradedbread.UpgradedBread;
 import net.kogasachan.upgradedbread.block.BreadBlocks;
+import net.kogasachan.upgradedbread.item.BreadItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -12,15 +13,15 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 public class BreadCreativeModeTabs {
-    //DeferredRegister: 延迟注册器, 正式注册物品, 创造模式标签页, 方块, 药水效果等的必须前置
+    // DeferredRegister: 延迟注册器, 正式注册物品, 创造模式标签页, 方块, 药水效果等的必须前置
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, UpgradedBread.MODID);
 
-    //把物品加入物品栏
+    // 把物品加入物品栏
     public static final RegistryObject<CreativeModeTab> BREAD_TAB = CREATIVE_MODE_TABS.register("bread_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(BreadItems.FRESH_LONG_BREAD.get()))
                     .title(Component.translatable("item_group.upgradedbread.upgradedbreadtab"))
                     .displayItems((pParameters, pOutput) -> {
-                        //essence----------------------------------------------------------------------------------------------->
+                        // essence
                         pOutput.accept(BreadItems.HARD_BREAD.get());
                         pOutput.accept(BreadItems.HARDER_BREAD.get());
                         pOutput.accept(BreadItems.CARBOHYDRATE_ESSENCE.get());
@@ -40,12 +41,12 @@ public class BreadCreativeModeTabs {
                         pOutput.accept(BreadItems.FREEZING_ESSENCE.get());
                         pOutput.accept(BreadItems.CARBOHYDRATE_INGOT.get());
 
-                        //essence(new)------------------------------------------------------------------------------------------>
+                        // essence (new)
                         pOutput.accept(BreadItems.GROWTH_ESSENCE.get());
                         pOutput.accept(BreadItems.LIFE_ESSENCE.get());
                         pOutput.accept(BreadItems.CHOCLIZ_ESSENCE.get());
 
-                        //food-------------------------------------------------------------------------------------------------->
+                        // food
                         pOutput.accept(Items.BREAD);
                         pOutput.accept(BreadItems.FRESH_LONG_BREAD.get());
                         pOutput.accept(BreadItems.DRY_LONG_BREAD.get());
@@ -64,19 +65,20 @@ public class BreadCreativeModeTabs {
                         pOutput.accept(BreadItems.FISHING_LONG_BREAD.get());
                         pOutput.accept(BreadItems.FREEZING_LONG_BREAD.get());
 
-                        //food(new)--------------------------------------------------------------------------------------------->
+                        // food (new)
                         pOutput.accept(BreadItems.KE_LA_LONG_BREAD.get());
                         pOutput.accept(BreadItems.LEES_WAFFLE.get());
                         pOutput.accept(BreadItems.CHOCLIZ_LONG_BREAD.get());
                         pOutput.accept(BreadItems.BAGUETTE_BAGUETTE.get());
                         pOutput.accept(BreadItems.MICRO_SOFT_BREAD.get());
                         pOutput.accept(BreadItems.MACRO_HARD_BREAD.get());
+                        // pOutput.accept(BreadItems.FOX_GIFT_LONG_BREAD.get());// 隐藏物品
 
-                        //material(vanilla)------------------------------------------------------------------------------------->
+                        // material (vanilla)
                         pOutput.accept(Items.WHEAT);
                         pOutput.accept(Items.WHEAT_SEEDS);
 
-                        //material(mod)----------------------------------------------------------------------------------------->
+                        // material (mod)
                         pOutput.accept(BreadItems.SUGAR_GROUP.get());
                         pOutput.accept(BreadItems.BLAZE_GROUP.get());
                         pOutput.accept(BreadItems.FOOT_GROUP.get());
@@ -93,18 +95,18 @@ public class BreadCreativeModeTabs {
                         pOutput.accept(BreadItems.FISHING_GROUP.get());
                         pOutput.accept(BreadItems.FREEZING_GROUP.get());
 
-                        //material(new)------------------------------------------------------------------------------------------->
+                        // material (new)
                         pOutput.accept(BreadItems.BONE_MEAL_GROUP.get());
                         pOutput.accept(BreadItems.TOTEM_GROUP.get());
                         pOutput.accept(BreadItems.COCOA_GROUP.get());
 
-                        //product----------------------------------------------------------------------------------------------->
+                        // product
                         pOutput.accept(BreadItems.HEART_OF_THE_COAL.get());
                         pOutput.accept(BreadItems.LOST_ENERGY_CORE.get());
                         pOutput.accept(BreadItems.LOW_ENERGY_CORE.get());
                         pOutput.accept(BreadItems.HIGH_ENERGY_CORE.get());
 
-                        //block------------------------------------------------------------------------------------------------->
+                        // block
                         pOutput.accept(Items.HAY_BLOCK);
                         pOutput.accept(BreadBlocks.CARBOHYDRATE_BLOCK.get());
                     })

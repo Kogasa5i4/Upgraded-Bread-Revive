@@ -16,12 +16,12 @@ import java.util.Map;
 import java.util.UUID;
 
 public class UnovertakableEvent {
-    //晚上只睡4个小时, 三口吃掉一根巧乐兹, 然后跑10公里, 跑完一口气灌一瓶冰雪碧. ----雪人三项
+    // 晚上只睡 4 个小时, 三口吃掉一根巧乐兹, 然后跑 10 公里, 跑完一口气灌一瓶冰雪碧. ---- 雪人三项
     private static final UUID HEALTH_PENALTY_UUID = UUID.fromString("c3d4e5f6-a7b8-90ab-cdef-1234567890ab");
     private static final Map<UUID, Integer> PENALTY_COUNT = new HashMap<>();
     private static final Map<UUID, Integer> EAT_COUNT = new HashMap<>();
 
-    //完成雪人三项之后给予最大生命值惩罚
+    // 完成雪人三项之后给予最大生命值惩罚
     @SubscribeEvent
     public void onEffectExpired(MobEffectEvent.Expired event) {
         MobEffectInstance instance = event.getEffectInstance();
@@ -30,7 +30,7 @@ public class UnovertakableEvent {
         }
     }
 
-    //逃课也没用哦
+    // 逃课也没用哦~
     @SubscribeEvent
     public void onEffectRemoved(MobEffectEvent.Remove event) {
         if (event.getEffect() != null && event.getEffect() == BreadEffects.UNOVERTAKABLE.get()) {
@@ -58,7 +58,7 @@ public class UnovertakableEvent {
             ));
         }
 
-        //防止血量超上限
+        // 防止血量超上限
         if (player.getHealth() > player.getMaxHealth()) {
             player.setHealth(player.getMaxHealth());
         }
@@ -66,22 +66,22 @@ public class UnovertakableEvent {
         int eatCount = EAT_COUNT.getOrDefault(playerId, 0) + 1;
         EAT_COUNT.put(playerId, eatCount);
 
-        //吃太多概率给予巨大惩罚, 一定程度上防止玩家试图无限续杯来逃课
+        // 吃太多概率给予巨大惩罚, 一定程度上防止玩家试图无限续杯来逃课
         if (eatCount >= 3) {
             EAT_COUNT.put(playerId, 0);
             player.setHealth(0.01f);
             return;
         }
 
-        //按配置文件决定吃完巧乐兹后玩家因药水效果结束而死亡的概率
-        //你一句别怂, 我就敢往前冲~
+        // 按配置文件决定吃完巧乐兹后玩家因药水效果结束而死亡的概率
+        // 你一句别怂, 我就敢往前冲~
         double chance = BreadConfigs.SERVER.penaltyDeathChance.get();
         if (player.getRandom().nextFloat() < chance) {
             player.setHealth(0);
         }
     }
 
-    //玩家死亡后移除惩罚
+    // 玩家死亡后移除惩罚
     @SubscribeEvent
     public void onPlayerRespawn(PlayerEvent.PlayerRespawnEvent event) {
         Player player = event.getEntity();

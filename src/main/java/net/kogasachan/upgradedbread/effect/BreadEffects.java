@@ -58,7 +58,7 @@ public class BreadEffects {
                             return true;
                         }
                     });
-    // !?经验汲取?!
+    // 经验提升
     public static final RegistryObject<MobEffect> EXPERIENCE_BOOST =
             MOB_EFFECTS.register("experience_boost",
                     () -> new MobEffect(MobEffectCategory.BENEFICIAL, 0x55FF55) {
@@ -80,6 +80,15 @@ public class BreadEffects {
     public static final RegistryObject<MobEffect> EXPERIENCE_SHIELD =
             MOB_EFFECTS.register("experience_shield",
                     () -> new MobEffect(MobEffectCategory.BENEFICIAL, 0x00AAFF) {
+                        @Override
+                        public boolean isDurationEffectTick(int duration, int amplifier) {
+                            return false;
+                        }
+                    });
+    // 灼热
+    public static final RegistryObject<MobEffect> BURNING_ATTACK =
+            MOB_EFFECTS.register("burning_attack",
+                    () -> new MobEffect(MobEffectCategory.BENEFICIAL, 0xFF4500) {
                         @Override
                         public boolean isDurationEffectTick(int duration, int amplifier) {
                             return false;

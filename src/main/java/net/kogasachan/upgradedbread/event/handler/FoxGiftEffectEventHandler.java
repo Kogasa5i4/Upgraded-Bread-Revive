@@ -22,8 +22,6 @@ public class FoxGiftEffectEventHandler {
     private static final double TRIGGER_CHANCE = 0.25;
     // 效果持续时间
     private static final int DURATION = 1200;
-    // 效果等级
-    private static final int AMPLIFIER = 0;
     // 药水效果列表: 延迟初始化, 避免 runData 时因 RegistryObject 未注册而报错
     private static List<MobEffect> EFFECTS = null;
 
@@ -34,6 +32,7 @@ public class FoxGiftEffectEventHandler {
                     BreadEffects.EXPERIENCE_BOOST.get(),
                     BreadEffects.AUTO_REPAIR.get(),
                     BreadEffects.EXPERIENCE_SHIELD.get(),
+                    BreadEffects.BURNING_ATTACK.get(),
                     MobEffects.LUCK
             );
         }
@@ -59,7 +58,10 @@ public class FoxGiftEffectEventHandler {
         List<MobEffect> effects = getEffects();
         MobEffect selectedEffect = effects.get(player.getRandom().nextInt(effects.size()));
 
+        // 随机生成: 1 - 10 级
+        int randomAmplifier = player.getRandom().nextInt(10); // 0 - 9
+
         // 应用效果
-        player.addEffect(new MobEffectInstance(selectedEffect, DURATION, AMPLIFIER));
+        player.addEffect(new MobEffectInstance(selectedEffect, DURATION, randomAmplifier));
     }
 }

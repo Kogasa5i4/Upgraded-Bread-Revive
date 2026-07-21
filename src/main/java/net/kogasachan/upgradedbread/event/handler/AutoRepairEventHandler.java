@@ -2,6 +2,8 @@ package net.kogasachan.upgradedbread.event.handler;
 
 import net.kogasachan.upgradedbread.UpgradedBread;
 import net.kogasachan.upgradedbread.effect.BreadEffects;
+import net.kogasachan.upgradedbread.sound.BreadSounds;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
@@ -71,6 +73,17 @@ public class AutoRepairEventHandler {
             // 实际可消耗的经验
             int useExp = Math.min(totalExp, expCost);
             if (useExp <= 0) continue;
+
+            // 当确定要施加抢救效果时, 播放自定义音效
+            // 在服务端执行, 这样所有玩家都能听到
+            if (!player.level().isClientSide()) {
+                player.level().playSound(null,
+                        player.getX(), player.getY(), player.getZ(),
+                        BreadSounds.AUTO_REPAIR.get(), // 注册的音效事件
+                        SoundSource.PLAYERS,            // 音效分类, 影响音量滑块
+                        1.0f,                           // 音量
+                        1.0f);                          // 音高
+            }
 
             // 扣除经验
             player.giveExperiencePoints(-useExp);

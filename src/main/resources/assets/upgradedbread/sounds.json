@@ -1,0 +1,20 @@
+{
+  "burning_attack": {
+    "subtitle": "subtitles.upgradedbread.burning_attack",
+    "sounds": [
+      "burning_attack"
+    ]
+  },
+  "experience_boost": {
+    "subtitle": "subtitles.upgradedbread.experience_boost",
+    "sounds": [
+      "experience_boost"
+    ]
+  },
+  "auto_repair": {
+    "subtitle": "subtitles.upgradedbread.auto_repair",
+    "sounds": [
+      "auto_repair"
+    ]
+  }
+}

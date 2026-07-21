@@ -30,8 +30,6 @@
     }
   },
   "rewards": {
-    "experience": {
-      "levels": 5
-    }
+    "experience": 10000
   }
 }

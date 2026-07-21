@@ -8,6 +8,7 @@ import net.kogasachan.upgradedbread.event.FoxGivingEvent;
 import net.kogasachan.upgradedbread.event.UnovertakableEvent;
 import net.kogasachan.upgradedbread.item.BreadItems;
 import net.kogasachan.upgradedbread.item.tab.BreadCreativeModeTabs;
+import net.kogasachan.upgradedbread.sound.BreadSounds;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -34,11 +35,12 @@ public class UpgradedBread {
         // 主类的注册
         MinecraftForge.EVENT_BUS.register(this);
 
-        // 物品, 创造模式标签页, 方块, 药水效果注册(注意药水效果写法不同)
+        // 物品, 创造模式标签页, 方块, 药水效果, 音效注册(注意药水效果写法不同)
         BreadItems.register(modEventBus);
         BreadCreativeModeTabs.register(modEventBus);
         BreadBlocks.register(modEventBus);
         BreadEffects.MOB_EFFECTS.register(modEventBus);
+        BreadSounds.register(modEventBus);
 
         // 事件监听
         modEventBus.addListener(this::commonSetup);

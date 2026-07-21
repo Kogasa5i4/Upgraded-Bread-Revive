@@ -449,13 +449,13 @@ public class BreadItems {
                     tooltip.add(Component.translatable("tooltip.upgradedbread.support.astral_hikari"));
                 }
             });
-    public static final RegistryObject<Item> FOX_GIFT_LONG_BREAD = ITEMS.register("fox_give_long_bread",
+    public static final RegistryObject<Item> FOX_GIFT_LONG_BREAD = ITEMS.register("fox_gift_long_bread",
             () -> new SimpleFoiledItem(new Item.Properties().fireResistant().stacksTo(64).rarity(Rarity.EPIC).food((new FoodProperties.Builder()).alwaysEat().fast()
                     .nutrition(3).saturationMod(0.8F).build())) {
                 @Override
                 public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
                     super.appendHoverText(itemStack, level, tooltip, flag);
-                    tooltip.add(Component.translatable("tooltip.upgradedbread.fox_give_long_bread.tooltip"));
+                    tooltip.add(Component.translatable("tooltip.upgradedbread.fox_gift_long_bread.tooltip"));
                     tooltip.add(Component.translatable("tooltip.upgradedbread.support.tincyclopedia"));
                 }
             });

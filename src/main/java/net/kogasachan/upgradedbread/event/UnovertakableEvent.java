@@ -1,12 +1,18 @@
 package net.kogasachan.upgradedbread.event;
 
 import net.kogasachan.upgradedbread.config.BreadConfigs;
+import net.kogasachan.upgradedbread.damage.BreadDamageTypes;
 import net.kogasachan.upgradedbread.effect.BreadEffects;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -77,7 +83,41 @@ public class UnovertakableEvent {
         // 你一句别怂, 我就敢往前冲~
         double chance = BreadConfigs.SERVER.penaltyDeathChance.get();
         if (player.getRandom().nextFloat() < chance) {
-            player.setHealth(0);
+            String DEATH_MARKER = "unovertakable_death";
+            // 防止递归
+            if (player.getPersistentData().getBoolean(DEATH_MARKER)) return;
+
+            // 移除可能冲突的经验护盾效果
+            if (player.hasEffect(BreadEffects.EXPERIENCE_SHIELD.get())) {
+                player.removeEffect(BreadEffects.EXPERIENCE_SHIELD.get());
+            }
+
+            // 标记, 防止循环
+            player.getPersistentData().putBoolean(DEATH_MARKER, true);
+
+            // 获取自定义伤害类型
+            Level level = player.level();
+            Holder<DamageType> type = level.registryAccess()
+                    .lookupOrThrow(Registries.DAMAGE_TYPE)
+                    .getOrThrow(BreadDamageTypes.UNOVERTAKABLE);
+
+            // 构造无来源伤害 (causingEntity 和 directEntity 均为 null)
+            DamageSource source = new DamageSource(
+                    type,
+                    null, // 无造成者
+                    null  // 无直接攻击者
+            ) {
+                @Override
+                public boolean isIndirect() {
+                    return true; // 间接伤害
+                }
+            };
+
+            // 施加致命伤害 (会导致玩家死亡, 并触发自定义死亡信息)
+            player.hurt(source, Float.MAX_VALUE);
+
+            // 补刀防止不死
+            while (player.isAlive() && player.getHealth() > 0) {player.setHealth(0);}
         }
     }
 

@@ -29,14 +29,14 @@ public class BreadRegenerateEventHandler {
         LivingEntity entity = event.getEntity();
         if (!(entity instanceof Player player)) return;
 
-        boolean enableIncrement = BreadConfigs.SERVER.healthBreadEnableLevelIncrement.get();
-        int default_level = BreadConfigs.SERVER.healthBreadDefaultLevel.get();
+        boolean enableIncrement = BreadConfigs.SERVER.waffleBonusEnableLevelIncrement.get();
+        int default_level = BreadConfigs.SERVER.waffleBonusDefaultLevel.get();
         int level;
         if (enableIncrement) {
             UUID uuid = player.getUUID();
             int count = EAT_COUNT.getOrDefault(uuid, 0) + 1;
             EAT_COUNT.put(uuid, count);
-            int maxExtra = BreadConfigs.SERVER.healthBreadMaxLevel.get();
+            int maxExtra = BreadConfigs.SERVER.waffleBonusMaxLevel.get();
             int maxLevel = Math.min(255, default_level + maxExtra);
             level = Math.min(count - 1 + default_level, maxLevel);
         } else {
@@ -46,8 +46,8 @@ public class BreadRegenerateEventHandler {
         int duration = -1;
         player.addEffect(new MobEffectInstance(BreadEffects.MINOR_HEALTH_BOOST.get(), duration, level));
 
-        if (player.getHealth() == player.getMaxHealth() && BreadConfigs.SERVER.healthBreadEnableAbsorption.get())
-            player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, BreadConfigs.SERVER.healthBreadAbsorptionMaxTime.get(), BreadConfigs.SERVER.healthBreadAbsorptionLevel.get()), player);
+        if (player.getHealth() == player.getMaxHealth() && BreadConfigs.SERVER.waffleEnableAbsorption.get())
+            player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, BreadConfigs.SERVER.waffleAbsorptionDuration.get(), BreadConfigs.SERVER.waffleAbsorptionLevel.get()), player);
         player.setHealth(player.getMaxHealth());
     }
 }

@@ -1,6 +1,7 @@
 package net.kogasachan.upgradedbread.event.handler;
 
 import net.kogasachan.upgradedbread.UpgradedBread;
+import net.kogasachan.upgradedbread.config.BreadConfigs;
 import net.kogasachan.upgradedbread.effect.BreadEffects;
 import net.kogasachan.upgradedbread.item.BreadItems;
 import net.minecraft.world.effect.MobEffect;
@@ -17,14 +18,12 @@ import java.util.List;
 
 @Mod.EventBusSubscriber(modid = UpgradedBread.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class FoxGiftEffectEventHandler {
-
     // 触发概率
-    private static final double TRIGGER_CHANCE = 0.25;
+    private static final double TRIGGER_CHANCE = BreadConfigs.SERVER.specialEffectChance.get();
     // 效果持续时间
     private static final int DURATION = 1200;
     // 药水效果列表: 延迟初始化, 避免 runData 时因 RegistryObject 未注册而报错
     private static List<MobEffect> EFFECTS = null;
-
     private static List<MobEffect> getEffects() {
         if (EFFECTS == null) {
             EFFECTS = Arrays.asList(
@@ -41,6 +40,9 @@ public class FoxGiftEffectEventHandler {
 
     @SubscribeEvent
     public static void onItemFinish(LivingEntityUseItemEvent.Finish event) {
+        // 检查配置文件是否启用
+        if (!BreadConfigs.SERVER.enableSpecialEffect.get()) return;
+
         // 只处理玩家
         if (!(event.getEntity() instanceof Player player)) return;
 

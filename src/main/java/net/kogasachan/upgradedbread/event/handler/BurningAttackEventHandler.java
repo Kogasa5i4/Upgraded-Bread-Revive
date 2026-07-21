@@ -1,6 +1,7 @@
 package net.kogasachan.upgradedbread.event.handler;
 
 import net.kogasachan.upgradedbread.UpgradedBread;
+import net.kogasachan.upgradedbread.config.BreadConfigs;
 import net.kogasachan.upgradedbread.effect.BreadEffects;
 import net.kogasachan.upgradedbread.sound.BreadSounds;
 import net.minecraft.sounds.SoundSource;
@@ -29,7 +30,7 @@ public class BurningAttackEventHandler {
 
         // 当确定要施加火焰效果时, 播放自定义音效
         // 在服务端执行, 这样所有玩家都能听到
-        if (!player.level().isClientSide()) {
+        if (!player.level().isClientSide() && BreadConfigs.SERVER.enableSpecialSound.get()) {
             player.level().playSound(null,
                     player.getX(), player.getY(), player.getZ(),
                     BreadSounds.BURNING_ATTACK.get(), // 注册的音效事件
